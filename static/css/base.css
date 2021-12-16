@@ -23,7 +23,14 @@ body {
     text-transform: none;
     margin: 4px 30px;
 }
-
+.logo-font-header {
+    text-transform: none;
+    margin: 5px;
+    font-family: 'Damion', cursive;
+    font-size: 5rem;
+    color: #e9de61;
+    text-shadow: 2px 2px #000;
+}
 .main-logo-link {
     width: fit-content;
     margin: 20px;
@@ -91,12 +98,16 @@ body {
     font-family: 'Damion',cursive;
     font-size: 40px;
 }
+
 .bg-black {
+    background: #000;
+}
+.bg-gold {
     color: #000 !important;
     background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
 }
 
-.bg-black:hover{
+.bg-gold:hover{
     background: linear-gradient(to right, #AFB1AE, #E6E9E5, #B1B1B1, #E6E9E5, #C0C0C0);
 }
 
@@ -132,7 +143,7 @@ body {
         padding-top: 164px;
     }
 }
-
+/* snow banner image */
 .snow{
     position: absolute;
     top:0;
