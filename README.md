@@ -2,3 +2,4 @@
 
 snow banner made using online tutorials on youtube. (online tutorials is the company name)
 gold snow image from adobe stock
+serum bottle image from freepik
