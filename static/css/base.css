@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/header.jpg') no-repeat center center fixed;
+    background: url('/media/golh-header.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -52,13 +52,14 @@ body {
 }
 
 .shop-now-button {
-    background: rgb(0, 0, 0);
+    background: url('/media/blue-dark-snow.jpg');
     color: white;
+    border-radius: 10px !important;
     min-width: 260px;
 }
 
 .btn-black {
-    background: rgb(0, 0, 0);
+    background: black;
     color: white;
 }
 
@@ -68,8 +69,8 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: url('/media/blue-dark-snow.jpg');
+    color: gold;
 }
 
 .text-black {
@@ -115,9 +116,8 @@ body {
 }
 
 .bg-black {
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-    padding: 10px;
-    z-index: -1;
+    background: url('/media/gold-snow.jpg');
+    padding: 0 20px;
 }
 .bg-gold {
     color: #000 !important;
@@ -167,7 +167,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/media/gold-snow.jpg');
+    background: url('/media/blue-dark-snow.jpg');
     z-index: 1;
 }
 .snow:nth-child(1){
