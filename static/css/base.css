@@ -27,10 +27,25 @@ body {
     text-transform: none;
     margin: 5px;
     font-family: 'Damion', cursive;
-    font-size: 5rem;
-    color: #e9de61;
-    text-shadow: 2px 2px #000;
+    color: #cfc445;
+    text-shadow: 3px 3px #000;
 }
+
+/* rotwte text */
+.rotate {
+    font-size: 110px;
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
 .main-logo-link {
     width: fit-content;
     margin: 20px;
@@ -100,7 +115,9 @@ body {
 }
 
 .bg-black {
-    background: #000;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    padding: 10px;
+    z-index: -1;
 }
 .bg-gold {
     color: #000 !important;
@@ -118,7 +135,7 @@ body {
     left: 0;
     position: fixed;
     background: white;
-    z-index: -1:
+    z-index: -1;
 }
 /* -------------------------------- Media Queries */
 
@@ -200,3 +217,4 @@ body {
         background-position-y: 600px;
     }
 }
+
