@@ -4,10 +4,10 @@
       "model": "products.product",
       "fields": {
         "sku": "pp5001340155",
-        "name": "Arizona Original Bootcut Jeans",
+        "name": "Face Cream",
         "description": "Bootcut jeans in our just-right original fit are comfortable and look great too.  5-pocket style sits below waist straight fit through seat and thigh bootcut leg 18\" leg opening cotton washable imported extended sizes and washes available online only",
         "price": 53.99,
-        "category": 6,
+        "category": 1,
         "rating": 4.6,
         "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
         "image": "DP0709201205510679M.jpg"
@@ -1222,10 +1222,10 @@
       "model": "products.product",
       "fields": {
         "sku": "pp5005860263",
-        "name": "Lugz Empire Hi Mens Water-Resistant Hiking Boots",
+        "name": "Lugz Empire Hi Mens Water-Resistant Hiking Face Cream",
         "description": "Offering extra coverage with its high-top design, these water-resistant boots keep you looking good while you accomplish the task at hand. technology Flexa-stride memory foam insole construction synthetic upper rubber sole details lace up padded tongue and collar",
         "price": 108.99,
-        "category": 8,
+        "category": 1,
         "rating": 4,
         "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0805201520415923C.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
         "image": "DP0805201520415923C.jpg"
