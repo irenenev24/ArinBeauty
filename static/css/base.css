@@ -158,7 +158,26 @@ body {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 250px;
+    }
+}
+
+/* fixed top navbar only on small screens */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    .nav-link {
+        padding: 10px 8px 2px 1px;
+    }
+
+    ul {
+        padding-inline-start: 10px;
+        margin: 0px 0px 10px;
+    }
+    body {
+        height: calc(100vh - 116px);
     }
 }
 /* snow banner image */
