@@ -5,9 +5,9 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -20,7 +20,7 @@
                 <a href="{% url 'products' %}?category=face" class="dropdown-item">Face</a>
                 <a href="{% url 'products' %}?category=eyes"  class="dropdown-item">Eyes</a>
                 <a href="{% url 'products' %}?category=lips"  class="dropdown-item">Lips</a>
-                <a href="{% url 'products' %}?category=all_cosmetics"  class="dropdown-item">All Cosmetics</a>
+                <a href="{% url 'products' %}?category=face,eyes,lips"  class="dropdown-item">All Cosmetics</a>
             </div>
         </li>
 
@@ -45,7 +45,7 @@
                 <a href="{% url 'products' %}?category=dry" class="dropdown-item">Dry</a>
                 <a href="{% url 'products' %}?category=oily" class="dropdown-item">Oily</a>
                 <a href="{% url 'products' %}?category=combination" class="dropdown-item">Combination</a>
-                <a href="{% url 'products' %}?category=all_skin_types" class="dropdown-item">All Skin Types</a>
+                <a href="{% url 'products' %}?category=sensitive,dry,oily,combination" class="dropdown-item">All Skin Types</a>
             </div>
         </li>
 
@@ -54,7 +54,7 @@
                 Christmas
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
-                <a href="{% url 'products' %}?category=gift&sets" class="dropdown-item">Gift Sets</a>
+                <a href="{% url 'products' %}?category=gift_sets" class="dropdown-item">Gift Sets</a>
             </div>
         </li>
     </ul>

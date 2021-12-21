@@ -1,6 +1,6 @@
 [
     {
-      "pk": 1,
+      "pk": 3,
       "model": "products.category",
       "fields": {
         "name": "Face",
@@ -11,7 +11,7 @@
       "pk": 2,
       "model": "products.category",
       "fields": {
-        "name": "cosmetics",
+        "name": "eyes",
         "friendly_name": "tree"
       }
     },
