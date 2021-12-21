@@ -6,4 +6,4 @@ from django.shortcuts import render
 def view_bag(request):
     """A view to return the shoppng bag contents page"""
 
-    return render(request, 'home/index.html')
+    return render(request, 'bag/bag.html')
