@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!----------Main 500 Page Content------->
+
+<div class="parallax-container">
+    <div class="parallax">
+       <img src="{% get_media_prefix %}.jpg" alt="arin-beauty" width="640" height="640">
+    </div>
+ </div>
+<div class="container">
+    <div class="row">
+        <div class="card-panel center-align">
+            <h3 class="center-align">500</h3>
+            <h3 class="center-align">Server Error!</h3>
+            <a href="{% url 'home' %}" class="btn">Let's get you home!</a>
+        </div>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax">
+       <img class="responsive-img" src="{% get_media_prefix %}.jpg" alt="banshee">
+    </div>
+ </div>
+
+{% endblock %}
