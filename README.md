@@ -76,12 +76,89 @@ serum bottle image from freepik
 - ### As a site user:
      1. I would like the option to create an account for use on this site but as I might just want to browse I dont want this to be mandatory to access the sites content.
      2. Should I create an account I would like to easily login and logout to access my personal account info on my personalised account.
-     3. I would like to receive an email confirmation after registering to be able to verify that registration was successfull.
+     3. I would like to receive an email confirmation after registering to be able to verify that registration was successful.
      4. I'd like to be able to easily recover my password incase I forget it so that I can recover access to my account.
      5. I'd like my profile to include my order history, order confirmation and the option to save my payment information.
 
 - ### As a Store Owner:
-     1. As admin , I want to be able to have control of CRUD. I want to add new products when I choose.
+     1. As admin , I want to have control of CRUD. I want to add new products when I choose.
      2. I want to edit and update a product when needed. Example: new make-up colours added etc.
      3. I want to be able to delete products when needed. Example: discontinued. Low sales due to negative reviews etc.
-     
+
+
+## [SCOPE](#scope)
+The key features of the website is developed based on the user stories:
+### For any site user:
+ * A clear aim of the site. The home page features an image that shows some beauty products.
+ * The logo in this case features the word beauty to highlight the products sold by the company.
+ * The home page also features a banner which high-lights that delivery is free on orders above the amount shown.
+ * A clear products page where users can view all items when the all products option is selected.
+ * Clear pages to show each category when selected.
+ * When the search bar is utilized, the top searches will be at the top of the page to maximize UX.
+ * Product Detail page with detailed information about the selected product, this page will also be used to select the product for purchase and for increasing and decreasing the quantity required.
+ * Shopping cart page, here customers can view their selected products for purchase. Edit quantity required and confirm their order before checkout.
+ * Checkout page, allowing users to purchase products safely and securely.
+ * Confirmation page which will show customers that their order was successful. An email will also be sent to the customers email account given while purchasing.
+ * Contact page which can be used to contact the company when required.
+ * About us page, where users can find the mission statement of the company.
+ * A section where customers can review products that they have purchased.
+ * A sign up page where users can register for an account. Here they will be able to veiw purchase history and have a personalised account.
+
+## For registered users:
+* Profile page, where users can update the default delivery information allowing ease of checkout.
+* Users can see their order history from their profile page.
+* Here customers can also leave a product review.
+* Log out page, where users can securely log out of their page.
+
+### For Store Owner:
+  1. I would like to be able to add new products to the store.
+  2. I would like to be able to edit and update a product from the store.
+  3. I would like to be able to delete a product from the store.
+  4. I would like to be able to delete reviews from users such as abusive or offensive messages left.
+  5. Having control of CRUD will allow me to keep the site up to date and maintain a high standard of customer service.
+
+## [STRUCTURE](#structure)
+## Existing Features
+### Allauth features
+The sign up, register, password reset, email confirmation pages etc, have all been provided by Django allauth and formatted to suit the needs of the site.
+### Base Template
+* Delivery Banner - The delivery banner contains information about free delivery and the free delivery threshold. It is fixed to the top of the screen to allow for ease of access and improved user navigation. It will change color when hovered over to make it stand out more.
+* Along the top of the screen is a search bar. This will use Q to search through products using names and/or descriptions.
+* Also along the top of the site the user will find links that will take users to different parts of the site which are as follows:
+ * Unregistered user:
+   * Login link
+   * Register link
+ * Registered user:
+   * Wishlist
+   * My Account - Profile, Logout
+   * Cart
+ * Admin/ superuser
+   * Wishlist
+   * My Account - Product Management, Profile, Logout
+### Navbar
+The navbar will have all the product category links and is fully adjustable across screen sizes.
+* All Products - here products may be sorted and selected based on rating, price and categories.
+* Cosmetics
+    - Face
+    - Eyes
+    - Lips
+    - All Cosmetics
+* Skin Type
+    - Sensitive
+    - Dry
+    - Oily
+    - Combination
+    - All Skin Types
+* Skin Care
+    - Moisturiser
+    - Cleanser
+    - Serum
+    - All Skin Care
+* Christmas
+    - Gift Sets
+### Back To Top Button
+ * Due to the large volume of the site a back to top button is required for easy navigation throughtout.
+### Footer
+The footer has all the important shop information such as opening hours, contact details and all the important heading links.
+#### Admin Features
+  * Admin will have access to additional features across the site not accessible to other users. 
