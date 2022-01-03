@@ -5,3 +5,4 @@
   * [Testing performance](#testing-performance)
   * [Testing accessibility](#testing-accessibility)
   * [known bugs](#known-bugs)
+  remove button not working in the shopping bag page.
