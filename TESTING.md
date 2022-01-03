@@ -18,3 +18,6 @@ TypeError: can only concatenate list (not "set") to list
 
 After searching through files I found that in the settings.py file I had added that in templates I had added 'builtins' and its contents using curly brackets instead of square brackets. This resolved the above issue but threw another error.
 django.template.library.InvalidTemplateLibrary: Invalid template library specified. ImportError raised when trying to load 'crispy_forms.templatetags.crispy_forms_fields': No module named 'crispy_forms.templatetags.crispy_forms_fields' - I realised I had a spelling error and removed the stray 's' from fields. The server then operated as expected.
+
+* AttributeError: 'Settings' object has no attribute 'STRIPE_PUBLIC_KEY' when I saved the stripe_public_key to my variables in my workspace I had a typo.
+* I had forgotten to pip3 install stripe
