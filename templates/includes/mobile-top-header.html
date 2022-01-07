@@ -42,6 +42,15 @@
       </div>
   </li>
   <li class="list-inline-item">
+    <a class="nav-link nav-link-logo d-block d-lg-none" href="{% url 'wishlist' %}">
+        <div class="text-center">
+            <div>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </a>
+</li>
+  <li class="list-inline-item">
       <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
           <div class="text-center">
               <div><i class="fas fa-shopping-bag fa-lg"></i></div>

@@ -21,3 +21,7 @@ django.template.library.InvalidTemplateLibrary: Invalid template library specifi
 
 * AttributeError: 'Settings' object has no attribute 'STRIPE_PUBLIC_KEY' when I saved the stripe_public_key to my variables in my workspace I had a typo.
 * I had forgotten to pip3 install stripe
+
+* remove button wasnt working because I hadnt added a reverse url to the view to go back to the updated shopping bag.
+
+* stript form for payment not loading correctly.

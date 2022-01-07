@@ -70,10 +70,13 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: url('/media/gold-snow.jpg');
+    background: #000;
     color: rgb(248, 244, 244);
 }
 
+.btn-black-2 {
+    background: rgb(255, 183, 245);
+}
 .text-black {
     color: #000;
 }
