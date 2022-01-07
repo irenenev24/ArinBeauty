@@ -66,3 +66,16 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+def wishlist(request):
+    """ A view to show all products that are on a users wishlist """
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    wishlist_products = user_profile.wishlist.all()
+
+    context = {
+        'user_profile': user_profile,
+        'wishlist_products': wishlist_products,
+    }
+
+    return render(request, 'products/wishlist.html', context)
+
