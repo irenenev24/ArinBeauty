@@ -26,7 +26,8 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, this payment was not processed. Please try again.')
+        messages.error(request, 'Sorry, your payment cannot be \
+            processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 
 
@@ -41,12 +42,12 @@ def checkout(request):
             'full_name': request.POST['full_name'],
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
-            'country': request.POST['country'],
-            'postcode': request.POST['postcode'],
-            'town_or_city': request.POST['town_or_city'],
             'street_address1': request.POST['street_address1'],
             'street_address2': request.POST['street_address2'],
+            'town_or_city': request.POST['town_or_city'],
             'county': request.POST['county'],
+            'postcode': request.POST['postcode'],
+            'country': request.POST['country'],
         }
         order_form = OrderForm(form_data)
         if order_form.is_valid():
@@ -109,12 +110,12 @@ def checkout(request):
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
-                    'country': profile.default_country,
-                    'postcode': profile.default_postcode,
-                    'town_or_city': profile.default_town_or_city,
                     'street_address1': profile.default_street_address1,
                     'street_address2': profile.default_street_address2,
+                    'town_or_city': profile.default_town_or_city,
                     'county': profile.default_county,
+                    'postcode': profile.default_postcode,
+                    'country': profile.default_country,
                 })
             except UserProfile.DoesNotExist:
                 order_form = OrderForm()
@@ -151,13 +152,15 @@ def checkout_success(request, order_number):
         # Save the user's info
         if save_info:
             profile_data = {
-                'default_phone_number': order.phone_number,
-                'default_country': order.country,
-                'default_postcode': order.postcode,
-                'default_town_or_city': order.town_or_city,
-                'default_street_address1': order.street_address1,
-                'default_street_address2': order.street_address2,
-                'default_county': order.county,
+                'full_name': profile.user.get_full_name(),
+                'email': profile.user.email,
+                'phone_number': profile.default_phone_number,
+                'street_address1': profile.default_street_address1,
+                'street_address2': profile.default_street_address2,
+                'town_or_city': profile.default_town_or_city,
+                'county': profile.default_county,
+                'postcode': profile.default_postcode,
+                'country': profile.default_country,
             }
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
@@ -176,3 +179,4 @@ def checkout_success(request, order_number):
     }
 
     return render(request, template, context)
+    
