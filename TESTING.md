@@ -25,3 +25,5 @@ django.template.library.InvalidTemplateLibrary: Invalid template library specifi
 * remove button wasnt working because I hadnt added a reverse url to the view to go back to the updated shopping bag.
 
 * stript form for payment not loading correctly.
+
+* secret_key!!
