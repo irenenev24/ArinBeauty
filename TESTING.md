@@ -30,3 +30,7 @@ django.template.library.InvalidTemplateLibrary: Invalid template library specifi
 
 * stripe wasnt working because I had a typo in pid. ()[0] the square bracket was outside the bracket.
 when stripe was working a new error came up. this error showed that the checkout orderline wasnt functioning correctly because the site was looking for a product.size element and on my site i dont have product.sizes as it is irrelevant for my beauty product site.
+
+the date wasnt showing on the confirmation email as i had it down as {order.order_date} instead of {order.date}
+
+* add product page didnt open. I used diffchecker.com to check the difference between my code and the video source code. I found a spelling error. A screenshot of this image is included.

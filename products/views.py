@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
+
 from .models import Product, Category
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -67,15 +69,12 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
-def wishlist(request):
-    """ A view to show all products that are on a users wishlist """
-    user_profile = get_object_or_404(UserProfile, user=request.user)
-    wishlist_products = user_profile.wishlist.all()
-
+def add_product(request):
+    ### Add a product to the store ###
+    form = ProductForm()
+    template = 'products/add_product.html'
     context = {
-        'user_profile': user_profile,
-        'wishlist_products': wishlist_products,
+        'form': form,
     }
 
-    return render(request, 'products/wishlist.html', context)
-
+    return render(request, template, context)

@@ -5,7 +5,7 @@ We have recieved your order at Arin Beauty and it is on its way!
 Your order info is as follows:
 
     Order Number: {{ order.order_number }}
-    Order Date: {{ order.order_date }}
+    Order Date: {{ order.date }}
 
     Order Total: {{ order.order_total }}
     Delivery: {{ order.delivery_cost }}
