@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-s_m=w!uux-y=-(t@+j^faf5vb94mjo)m@82oasa81(*2m4542g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+]
 
 
 # Application definition
@@ -169,7 +170,7 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-FREE_DELIVERY_THRESHOLD = 49.99
+FREE_DELIVERY_THRESHOLD = 50.00
 STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Default primary key field type
