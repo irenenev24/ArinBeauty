@@ -27,3 +27,6 @@ django.template.library.InvalidTemplateLibrary: Invalid template library specifi
 * stript form for payment not loading correctly.
 
 * secret_key!!
+
+* stripe wasnt working because I had a typo in pid. ()[0] the square bracket was outside the bracket.
+when stripe was working a new error came up. this error showed that the checkout orderline wasnt functioning correctly because the site was looking for a product.size element and on my site i dont have product.sizes as it is irrelevant for my beauty product site.
