@@ -30,7 +30,7 @@ body {
     -ms-transform: translate(-50%,-50%);
   }
 /*-- Media Queries --*/
-@media (min-width: 576px) {
+@media (max-width: 576px) {
     #text{
         top: 85%;
       }
