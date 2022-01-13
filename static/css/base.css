@@ -1,15 +1,15 @@
 html {
     height: 100%;
+    width: 100%;
 }
 
 body {
-    background: url('/media/serum-header.jpg') no-repeat center center fixed;
+    background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(80vh - 164px);
     color: #555;
     font-family: 'Lato';
 }
-
 /* from Bulma */
 .icon {
     align-items: center;
@@ -26,7 +26,7 @@ body {
     text-transform: none;
     margin: 5px;
     font-family: 'Damion', cursive;
-    color: rgb(123, 123, 133);
+    color: rgb(187, 173, 47);
     text-shadow: 4px 4px #000;
 }
 .small {
@@ -50,6 +50,7 @@ body {
 .main-logo-link {
     width: fit-content;
     margin: 20px;
+    z-index: 999999;
 }
 
 .shop-now-button {
@@ -179,7 +180,7 @@ body {
 
 .bg-black {
     background: transparent;
-    padding: 0 20px;
+    padding: 0 10px;
 }
 .bg-gold {
     color: #000;
@@ -377,6 +378,15 @@ input[name='q']::placeholder {
     border-radius: 0;
 }
 
+.logo-container {
+    background-color: #000;
+}
+
+.logo-overlay {
+        background: url('/media/logo.png') no-repeat center center fixed;
+        background-size: cover;
+        height: calc(80vh - 130px);
+}
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {

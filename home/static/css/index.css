@@ -1,0 +1,45 @@
+/*-- Body --*/
+body {
+    background: url('/media/logo-resized-transparent.png') no-repeat center center fixed;
+    background-color: #000;
+    height: 100vh;
+}
+
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+  }
+  
+  #text{
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
+/*-- Media Queries --*/
+@media (min-width: 576px) {
+    #text{
+        top: 85%;
+      }
+}
+
+@media (max-width: 370px) {
+    
+}
+
+@media (max-width: 280px) {
+    
+}
