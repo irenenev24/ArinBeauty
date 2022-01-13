@@ -349,6 +349,34 @@ input[name='q']::placeholder {
 .allauth-form-inner-content a {
 	color: #17a2b8; /* text-info */
 }
+
+/* Product Form */
+
+.btn-file{
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #000;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #f0df8a;
+    border-radius: 0;
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
@@ -391,60 +419,3 @@ input[name='q']::placeholder {
         
     }
 }
-/* snow banner image 
-.snow{
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/media/snow.jpg');
-    z-index: -2;
-}
-.snow:nth-child(1){
-    animation: animate 10s linear infinite;
-}
-.snow:nth-child(2){
-    animation: animate 15s linear infinite;
-}
-.snow:nth-child(3){
-    animation: animate 20s linear infinite;
-}
-.snow:nth-child(4){
-    animation: animate 14s linear infinite;
-}
-.snow:nth-child(5){
-    animation: animate 16s linear infinite;
-}
-@keyframes animate {
-    0% {
-        background-position-x: 50px;
-        background-position-y: 0;
-    }
-    100% {
-        background-position-x: 50px;
-        background-position-y: 600px;
-    }
-}
-@keyframes animate2 {
-    0% {
-        background-position-x: 100px;
-        background-position-y: 0;
-    }
-    100% {
-        background-position-x: 100px;
-        background-position-y: 600px;
-    }
-}
-@keyframes animate3 {
-    0% {
-        transform: scale(1.5);
-        background-position-x: -100px;
-        background-position-y: 0;
-    }
-    100% {
-        transform: scale(1.5);
-        background-position-x: -100px;
-        background-position-y: 600px;
-    }
-}*/
