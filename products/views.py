@@ -128,7 +128,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    ### Delete a product from the store ###
+    # Delete a product from the store 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, this service is only for store owners')
         return redirect(reverse('home'))
@@ -137,3 +137,4 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, f'Product: {product.name} deleted!')
     return redirect(reverse('products'))
+

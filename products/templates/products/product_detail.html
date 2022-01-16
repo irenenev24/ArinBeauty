@@ -37,6 +37,7 @@
                         </a>
                     </p>
                     {% endif %}
+                </div>
                     {% if product.rating %}
                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                     {% else %}
@@ -77,6 +78,12 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            </div>
+                            <div class="reviews">
+                            {% if user.is_authenticated %}
+                                <a href="">Leave a review here</a>
+                            {% endif %}
                             </div>
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 mt-5">
