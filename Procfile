@@ -1,0 +1,1 @@
+web: gunicorn arin_beauty.wsgi.application
