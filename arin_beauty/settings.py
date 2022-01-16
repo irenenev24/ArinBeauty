@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'arin_beauty.herokuapp.com', 'localhost'
+    'arin-beauty.herokuapp.com', 'localhost'
 ]
 
 
