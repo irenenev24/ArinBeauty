@@ -1,1 +1,1 @@
-web: gunicorn arin_beauty.wsgi.application
+web: gunicorn arin_beauty.wsgi:application
