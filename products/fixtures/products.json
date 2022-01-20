@@ -27,6 +27,20 @@
         "image": "rotated-image.jpg"
       }
     }
+    {
+      "pk": 3,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp3452617263",
+        "name": "Woman",
+        "description": "Woman",
+        "price": 45.00,
+        "category": 1,
+        "rating": 5,
+        "image_url": "",
+        "image": "istockphoto-1069713934-612x612.jpg"
+      }
+    }
   ]
 
 
