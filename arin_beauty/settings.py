@@ -32,6 +32,7 @@ ALLOWED_HOSTS = [
     'arin-beauty.herokuapp.com', 'localhost'
 ]
 
+LANGUAGE_CODE = 'en-GB'
 
 # Application definition
 
