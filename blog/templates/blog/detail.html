@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "blogbase.html" %}
 {% load static %}
 
 {% block page_header %}
@@ -21,6 +21,31 @@
                 <hr>
                     <p><strong>{{ post.intro }}</strong></p>
                     <p>{{ post.body }}</p>
+
+                    <h2>Comments</h2>
+
+                    {% if not post.comments.all %}
+                        <p>No comments yet.</p>
+                    {% endif %}
+
+                    {% for comment in post.comments.all %}
+                        <article>
+                            <strong>
+                                {{ comment.name }} at {{ comment.date_added }}
+                            </strong><br>
+                            {{ comment.body }}
+                        </article>
+                    {% endfor %}
+
+                    <h2>Add a comment</h2>
+
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+
+                        {{ form.as_table }}
+
+                        <input type="submit" value="Add comment">
+                    </form>
                 </article>
             </div>
         </div>

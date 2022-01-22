@@ -388,6 +388,15 @@ input[name='q']::placeholder {
         background-size: cover;
         height: calc(80vh - 130px);
 }
+
+.hero-foot {
+    border-top: 3px #008B8B solid;
+    padding: 20px;
+}
+.footer {
+    flex-shrink: 0;
+  }
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
