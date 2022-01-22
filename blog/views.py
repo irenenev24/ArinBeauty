@@ -11,3 +11,22 @@ def blog(request):
     }
 
     return render(request, 'blog/blog.html', context)
+
+def detail(request, slug):
+    post = Post.objects.get(slug=slug)
+
+    context = {
+        'post': post
+    }
+
+    return render(request, 'blog/detail.html', context)
+
+def category(request, slug):
+    category = Category.objects.get(slug=slug)
+
+    context = {
+        'category': category
+    }
+
+    return render(request, 'blog/category.html', context)
+

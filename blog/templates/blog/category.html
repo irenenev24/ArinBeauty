@@ -15,12 +15,12 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4">Blog</h2>
+                <h1 class="title">{{ category.title }}</h1>
                 <hr>
 
-                {% for post in posts %}
+                {% for post in category.posts.all %}
                     <article>
-                        <h2 class="title">
+                        <h2 class="subtitle">
                             {{ post.title }}
                         </h2>
                         <time>{{ post.date_added|date:"M Y h:i" }}</time>
