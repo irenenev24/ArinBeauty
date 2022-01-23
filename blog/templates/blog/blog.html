@@ -32,10 +32,10 @@
                     <article>
                         <div class="container container-sustain">
                             {% if post.image %}
-                <a href="{% url 'post_detail' post.slug %}">
+                <a href="{% url 'post_detail' post.category.slug post.slug %}">
                     <div class="card-image">
                         <figure class="image">
-                            <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
+                            <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
                         </figure>
                     </div>
                 </a>

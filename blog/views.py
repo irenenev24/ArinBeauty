@@ -36,7 +36,11 @@ def detail(request, category_slug, slug):
             obj.post = post
             obj.save()
 
-            return redirect('post_detail', slug=post.slug)
+            return redirect(
+                'post_detail',
+                category_slug=post.category.slug,
+                slug=post.slug
+            )
     else:
         form = CommentForm()
 

@@ -22,7 +22,7 @@
                     <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}  </a></small><br><time>{{ post.date_added|date:"h:i M Y" }}</time></p>
                 <hr>
                 {% if post.image %}
-                <a href="{% url 'post_detail'post.category.slug post.slug %}">
+                <a href="{% url 'post_detail' post.category.slug post.slug %}">
                     <div class="card-image">
                         <figure class="image">
                             <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
