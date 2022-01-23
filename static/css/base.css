@@ -449,12 +449,28 @@ input[name='q']::placeholder {
   }
   
   .flex-container > div {
-    background-color: #f1f1f1;
+    background-color: rgb(255, 248, 239);
     margin: 10px;
     width: 50% !important;
     padding: 20px;
     font-size: 30px;
   }
+
+  .container-sustain{
+      background-color:rgb(255, 248, 239);
+      padding: 40px 20px;
+  }
   .history {
       text-align: center;
   }
+  .blog-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url('/media/blog-overlay.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -3 !important;
+    overflow-x: hidden;
+}

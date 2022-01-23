@@ -10,11 +10,12 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+    <div class="blog-overlay"></div>
     <div class="container mb-2">
         <div class="row">
             <div class="col">
                 <hr>
+                <h2 class="logo-font mb-4 text-center">Arin Beauty Blog</h2>
                 <article class='content'>
                     <h1>{{ post.title }}</h1>
                     <time>{{ post.date_added|date:"M Y h:i" }}</time> <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a></small></p>
@@ -30,26 +31,30 @@
                     <br>
                     <p>Author: {{ post.author }}</p>
                 <hr>
+                {% if request.user.is_superuser %}
+                        <small class="m1-3">
+                            <a href="{% url 'add_post' %}">Add a blog post</a> | 
+                        </small>
+                    {% endif %}
                     <h4>Comments</h4>
-
+                    <!--Placeholder if no comments posted yet.-->
                     {% if not post.comments.all %}
                         <p>No comments yet.</p>
                     {% endif %}
-
+                    <!--For customers comments to appear on the review blogs-->
                     {% for comment in post.comments.all %}
                         <article>
                             <strong>
                                 {{ comment.title }} at {{ comment.date_added }}
                             </strong><br>
-                            {{ comment.description }}
+                            {{ comment.description }} by {{ comment.name }}
                         </article>
                     {% endfor %}
-                    
+                    <!--For customers to post comments on the review blogs-->
                     <h4>Add a comment</h4>
                     
                     <form method="POST" action=".">
                         {% csrf_token %}
-
                         {{ form.as_table }}
 
                         <input type="submit" value="Add comment">
