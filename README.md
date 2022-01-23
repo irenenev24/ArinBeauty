@@ -4,7 +4,13 @@ snow banner made using online tutorials on youtube. (online tutorials is the com
 gold snow image from adobe stock
 serum bottle image from freepik
 
-# TABLE OF CONTENTS
+# Mission Statement
+- To provide an easily accessible site for the promotion and sale of beauty products. To showcase the Arin Beauty Products Company and its history and sustainability.
+
+# Target Audience
+- The target audience for ARIN Beauty Products is consumers who love to find all their beauty needs met in one effective site. Here they can find beauty products for sale, makeup tutorials, reviews and more. They can make a profile, have an order history and leave comments on the blog.
+
+# Table Of Contents
 ## 1. [User Experience (UX)](#ux-design)
    * [Strategy](#strategy)
    * [Scope](#scope) 
@@ -151,9 +157,97 @@ The navbar will have all the product category links and is fully adjustable acro
     - All Skin Care
 * Christmas
     - Gift Sets
+* Blog
+    - Our Story
+### Blog Navbar
+The main site navbar leads to a blog. When the blog button is clicked it leads to a new navbar and dropdown menus. The blog is a place where the sustainability promise to customers is shared along with a brief history of the company and introduction to the team.
+Here, users can also access makeup tutorials, read reviews of products and leave comments. For now adding and deleting blog posts is only for authenticated users(admin.) In later edits of the site the ability to add posts will be made public but deletion will still be admin only.
+* Blog
+    - Blog Content
+* About Us
+    - About Us
+* Categories
+    - Foundation
+    - Makeup Tutorials
+* Makeup Tutorials
+    - Videos
+* Sustainability Promise
+    - Our Promise
 ### Back To Top Button
  * Due to the large volume of the site a back to top button is required for easy navigation throughtout.
 ### Footer
 The footer has all the important shop information such as opening hours, contact details and all the important heading links.
 #### Admin Features
   * Admin will have access to additional features across the site not accessible to other users. 
+## [Skeleton](#skeleton)
+
+### Technologies
+#### Integrated Development Environment
+* GitHub
+* Languages
+* HTML
+* CSS
+* JavaScript
+* Python
+* Database
+#### Development - SQLite
+* Deployed site - Heroku PostgreSQL
+#### Storage
+* Amazon AWS S3 - used to store static files.
+#### Payments
+* Stripe - fully integrated payments platform.
+#### Frameworks
+* Django - web development framework.
+* Bootstrap - to assist with responsive design.
+* jQuery - to assist with JavaScript coding and DOM manipulation.
+#### Tools & Libraries
+* Balsamiq - used to produce Wireframes.
+* Font Awesome
+* Google Fonts
+* django-allauth - user authentication and account management.
+* boto3 - Amazon Web Services SDK for python. Used to configure Amazon Web Services S3 storage of static files.
+* django-crispy-forms - enables enhanced rendering of Django forms including integration with Bootstrap.
+* dj-database-url - Django database configuration utility. Used to configure connection to the Heroku deployed postgres database.
+* django-countries - Django application providing country choices for use with forms etc. Used to populate country choices on the Country dropdowns.
+* django-extensions - Collection of custom extensions for Django. Used to automatically export the final data schema diagram for the Django model.
+* django-storages - Custom storage backends for Django. Used to configure Amazon Web Services S3 storage of static files.
+* gunicorn - Python WSGI HTTP Server for UNIX. Used as part of the Heroku deployment process.
+* pillow - Python imaging library.
+* psycopg2 - PostgreSQL database adapter for Python. Used as part of the Heroku deployment process.
+* pydot - Graphviz interface used to parse the Django data model into a .dot file using django-extensions.
+* Flake8 - for python code validation.
+* flake8-django - Flake8 plug-in for Django, for python code validation.
+* LAMBDATEST - cross browser testing cloud, for testing across multiple browsers and operating systems.
+Browser Support
+Arin Beauty Products supports the following browsers:
+
+Google Chrome
+Microsoft Edge
+Safari
+Firefox
+Opera
+For further information please see the Browser Compatibility section in TESTING.md.
+
+[Structure](#structure)
+Information Architecture
+
+
+Products Models
+Product - 
+
+Category - 
+
+Review - related to Product and User. Stores Product Reviews. A Django signal updates the Product rating field when a review is added, deleted or edited.
+
+Checkout Models
+Order - related to OrderLineItem and UserProfile. Stores Orders after successful checkout. Order order_number field is automatically added on save.
+Order discount, order_total, previous_total, delivery and grand_total fields are automatically updated using a Django signal when an OrderLineItem is added or deleted.
+
+OrderLineItem - related to Order, Type, Product and Size. Stores each OrderLineItem after successful checkout.
+OrderLineItem line_item_total field is automatically calculated on save.
+
+Profiles Models
+UserProfile - related to Order and User. Stores default delivery information. UserProfile is automatically created or updated using a Django receiver when a User object is updated or created.
+
+Cart Models
+Cart - related to User. Stripe webhooks.

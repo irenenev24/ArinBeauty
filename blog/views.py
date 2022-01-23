@@ -70,7 +70,7 @@ def add_post(request):
             obj.save()
 
             messages.success(request, "Successfully added blog post")
-            return redirect(reverse('post_detail', args=[post.slug]))
+            return redirect(reverse('post_detail',args=[post.slug]))
         else:
             messages.error(
                 request, "Failed to add blog post, please check the form is valid")

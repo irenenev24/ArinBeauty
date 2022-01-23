@@ -16,27 +16,34 @@
             <div class="col">
                 <hr>
                 <h2 class="logo-font mb-4 text-center">Arin Beauty Blog</h2>
-                <article class='content'>
-                    <h1>{{ post.title }}</h1>
-                    <time>{{ post.date_added|date:"M Y h:i" }}</time> <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a></small></p>
+                {% for post in posts %}
+                <article class='content container-sustain'>
+                    <h1 class="text-center">{{ post.title }}</h1>
+                    <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}  </a></small><br><time>{{ post.date_added|date:"h:i M Y" }}</time></p>
                 <hr>
-                    <img src="{{ post.image }}" alt="">
-                        <a href="{{ post.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
-                        </a>
+                {% if post.image %}
+                <a href="{% url 'post_detail'post.category.slug post.slug %}">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
+                        </figure>
+                    </div>
+                </a>
+                {% else %}
                     <br>  
-                    <h2>Description</h2>
+                    <h3>Description</h3>
                     <br>
                     <p>{{ post.content }}</p>
                     <br>
-                    <p>Author: {{ post.author }}</p>
+                    <h5><small>Author: {{ post.author }}</small></h5>
                 <hr>
+                {% endif %}
                 {% if request.user.is_superuser %}
-                        <small class="m1-3">
+                        <p class="m1-3">
                             <a href="{% url 'add_post' %}">Add a blog post</a> | 
-                        </small>
+                        </p>
                     {% endif %}
-                    <h4>Comments</h4>
+                    <h5>Comments</h5>
                     <!--Placeholder if no comments posted yet.-->
                     {% if not post.comments.all %}
                         <p>No comments yet.</p>
@@ -44,19 +51,17 @@
                     <!--For customers comments to appear on the review blogs-->
                     {% for comment in post.comments.all %}
                         <article>
-                            <strong>
-                                {{ comment.title }} at {{ comment.date_added }}
-                            </strong><br>
-                            {{ comment.description }} by {{ comment.name }}
+                            <p>{{ comment.title }} <br>
+                                {{ comment.description }} by {{ comment.name }} <br><small>{{ comment.date_added }}</small></p>
                         </article>
                     {% endfor %}
+                {% endfor %}
                     <!--For customers to post comments on the review blogs-->
-                    <h4>Add a comment</h4>
+                    <h5>Add a comment</h5>
                     
                     <form method="POST" action=".">
                         {% csrf_token %}
-                        {{ form.as_table }}
-
+                        {{ form | crispy }}
                         <input type="submit" value="Add comment">
                     </form>
                 </article>

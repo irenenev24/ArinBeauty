@@ -30,7 +30,24 @@
 
                 {% for post in posts %}
                     <article>
-                        <div class="container">
+                        <div class="container container-sustain">
+                            {% if post.image %}
+                <a href="{% url 'post_detail' post.slug %}">
+                    <div class="card-image">
+                        <figure class="image">
+                            <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
+                        </figure>
+                    </div>
+                </a>
+                {% else %}
+                    <br>  
+                    <h3>Description</h3>
+                    <br>
+                    <p>{{ post.content }}</p>
+                    <br>
+                    <h5><small>Author: {{ post.author }}</small></h5>
+                <hr>
+                {% endif %}
                         <h2 class="title">
                             {{ post.title }}
                         </h2>
