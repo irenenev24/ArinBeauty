@@ -16,13 +16,21 @@
             <div class="col">
                 <hr>
                 <article class='content'>
-                    <h1>{{ post.title}}</h1>
-                    <time>{{ post.date_added|date:"M Y h:i" }}</time> - <a href="{% url 'category' post.category.slug %}">{{ post.category.title }}</a>
+                    <h1>{{ post.title }}</h1>
+                    <time>{{ post.date_added|date:"M Y h:i" }}</time> <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}</a></small></p>
                 <hr>
-                    <p><strong>{{ post.intro }}</strong></p>
-                    <p>{{ post.body }}</p>
-
-                    <h2>Comments</h2>
+                    <img src="{{ post.image }}" alt="">
+                        <a href="{{ post.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+                        </a>
+                    <br>  
+                    <h2>Description</h2>
+                    <br>
+                    <p>{{ post.content }}</p>
+                    <br>
+                    <p>Author: {{ post.author }}</p>
+                <hr>
+                    <h4>Comments</h4>
 
                     {% if not post.comments.all %}
                         <p>No comments yet.</p>
@@ -31,14 +39,14 @@
                     {% for comment in post.comments.all %}
                         <article>
                             <strong>
-                                {{ comment.name }} at {{ comment.date_added }}
+                                {{ comment.title }} at {{ comment.date_added }}
                             </strong><br>
-                            {{ comment.body }}
+                            {{ comment.description }}
                         </article>
                     {% endfor %}
-
-                    <h2>Add a comment</h2>
-
+                    
+                    <h4>Add a comment</h4>
+                    
                     <form method="POST" action=".">
                         {% csrf_token %}
 

@@ -20,12 +20,14 @@
 
                 {% for post in posts %}
                     <article>
+                        <div class="container">
                         <h2 class="title">
                             {{ post.title }}
                         </h2>
                         <time>{{ post.date_added|date:"M Y h:i" }}</time>
                         <p>{{ post.intro }}</p>
-                        <a href="{% url 'detail' post.slug %}">Read More...</a>
+                        <a href="{% url 'post_detail' post.category.slug post.slug %}">Read More...</a>
+                    </div>
                     </article>
                     <br>
                 {% endfor %}
@@ -34,7 +36,7 @@
 
 {% endblock %}
 
-
-
+{% block page_footer %}
+{% endblock %}
 {% block postloadjs %}
 {% endblock %}

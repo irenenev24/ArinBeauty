@@ -24,8 +24,12 @@
                             {{ post.title }}
                         </h2>
                         <time>{{ post.date_added|date:"M Y h:i" }}</time>
-                        <p>{{ post.intro }}</p>
-                        <a href="{% url 'detail' post.slug %}">Read More...</a>
+                        <hr>
+                    <img src="{{ post.image }}" alt="">
+                        <a href="{{ post.image.url }}" target="_blank">
+                            <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+                        </a>
+                        <a href="{% url 'post_detail' post.category.slug post.slug %}">Read More...</a>
 
                     </article>
                 {% endfor %}

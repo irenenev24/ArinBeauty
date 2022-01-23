@@ -439,3 +439,22 @@ input[name='q']::placeholder {
         
     }
 }
+.card-img-top{
+    height: 200px !important;
+    width: 200px !important;
+}
+
+.flex-container {
+    display: flex;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    width: 50% !important;
+    padding: 20px;
+    font-size: 30px;
+  }
+  .history {
+      text-align: center;
+  }
