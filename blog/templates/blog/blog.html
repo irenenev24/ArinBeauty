@@ -14,25 +14,23 @@
     <div class="blog-overlay">
         <br>
         <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     <div class="container">
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4 text-center"> Arin Beauty Blog</h2>
+                <h2 class="logo-font mb-4 text-center">Arin Beauty Blog</h2>
                 <hr>
                 <br>
-
                 {% for post in posts %}
-                    <article>
-                        <div class="container container-sustain">
+                    <article class="container container-sustain">
                             {% if post.image %}
-                <a href="{% url 'post_detail' post.category.slug post.slug %}">
+                <a href="{% url 'post_detail' post.category.slug post.slug  %}">
                     <div class="card-image">
                         <figure class="image">
                             <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
@@ -60,7 +58,6 @@
                 {% endfor %}
             </div>
         </div>
-    </div>
 {% endblock %}
 
 {% block page_footer %}

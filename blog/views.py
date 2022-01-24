@@ -1,17 +1,18 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from .models import Category, Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 
 # Create your views here.
 def about(request):
-    ### View to render the about us blog page ###
+    """View to render the about us blog page """
     return render(request, 'blog/about.html')
 
 def sustainability(request):
-    ### View to render sustainability blog page ###
+    """ View to render sustainability blog page """
     return render(request, 'blog/sustainability.html')
 
 def blog(request):
@@ -66,20 +67,22 @@ def add_post(request):
         return redirect(reverse('blog'))
 
     if request.method == "POST":
-        form = Post(request.POST or None, request.FILES or None)
+        form = PostForm(request.POST or None, request.FILES or None)
         if form.is_valid():
             obj = form.save(commit=False)
             author = request.user
             obj.author = author
             obj.save()
 
-            messages.success(request, "Successfully added blog post")
-            return redirect(reverse('post_detail',args=[post.slug]))
+            messages.success(request, f'Successfully added {post.title}!')
+            return redirect(reverse(
+                'post_detail',
+                category_slug=post.category.slug,
+                slug=post.slug))
         else:
-            messages.error(
-                request, "Failed to add blog post, please check the form is valid")
+            messages.error(request, "Failed to add blog post, please ensure the form is valid")
     else:
-        form = Post()
+        form = PostForm()
 
     template = 'blog/add_post.html'
     context = {

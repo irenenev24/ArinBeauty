@@ -10,40 +10,43 @@
 {% endblock %}
 
 {% block content %}
-    <div class="blog-overlay"></div>
+<div class="blog-overlay"></div>
     <div class="container mb-2">
         <div class="row">
             <div class="col">
                 <hr>
                 <h2 class="logo-font mb-4 text-center">Arin Beauty Blog</h2>
-                {% for post in posts %}
-                <article class='content container-sustain'>
-                    <h1 class="text-center">{{ post.title }}</h1>
-                    <p><small>Category: <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}  </a></small><br><time>{{ post.date_added|date:"h:i M Y" }}</time></p>
-                <hr>
-                {% if post.image %}
-                <a href="{% url 'post_detail' post.category.slug post.slug %}">
-                    <div class="card-image">
-                        <figure class="image">
-                            <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
-                        </figure>
-                    </div>
-                </a>
-                {% else %}
-                    <br>  
-                    <h3>Description</h3>
-                    <br>
-                    <p>{{ post.content }}</p>
-                    <br>
-                    <h5><small>Author: {{ post.author }}</small></h5>
-                <hr>
-                {% endif %}
-                {% if request.user.is_superuser %}
-                        <p class="m1-3">
-                            <a href="{% url 'add_post' %}">Add a blog post</a> | 
-                        </p>
+                <hr><br>
+                        <article class="content container-sustain">
+                            <h1 class="text-center">{{ post.title }}</h1>
+                                <p><small>Category: 
+                                    <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}  </a></small>
+                                <br><time>{{ post.date_added|date:"h:i M Y" }}</time></p>
+                        <hr>
+                        {% if post.image %}
+                        <a href="{% url 'post_detail' post.category.slug post.slug %}">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
+                                </figure>
+                            </div>
+                        </a>
+                        {% else %}
+                            <br>  
+                            <h3>Description</h3>
+                            <br>
+                            <p>{{ post.content }}</p>
+                            <br>
+                            <h5><small>Author: {{ post.author }}</small></h5>
+                        <hr>
+                        {% endif %}
+                    {% if request.user.is_superuser %}
+                            <p class="m1-3">
+                                <a href="{% url 'add_post' %}">Add a blog post</a>
+                            </p>
                     {% endif %}
-                    <h5>Comments</h5>
+                <div class="container-sustain">
+                <h5>Comments</h5>
                     <!--Placeholder if no comments posted yet.-->
                     {% if not post.comments.all %}
                         <p>No comments yet.</p>
@@ -52,13 +55,11 @@
                     {% for comment in post.comments.all %}
                         <article>
                             <p>{{ comment.title }} <br>
-                                {{ comment.description }} by {{ comment.name }} <br><small>{{ comment.date_added }}</small></p>
+                                {{ comment.description }}<br> by {{ comment.name }} <br><small>{{ comment.date_added }}</small></p>
                         </article>
                     {% endfor %}
-                {% endfor %}
                     <!--For customers to post comments on the review blogs-->
                     <h5>Add a comment</h5>
-                    
                     <form method="POST" action=".">
                         {% csrf_token %}
                         {{ form | crispy }}
@@ -67,6 +68,7 @@
                 </article>
             </div>
         </div>
+    </div>
 {% endblock %}
 
 {% block postloadjs %}
