@@ -30,3 +30,19 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+class Review(models.Model):
+    product = models.ForeignKey(
+        Product, default=None, on_delete=models.PROTECT, related_name="reviews")
+    review_author = models.ForeignKey(
+        User, on_delete=models.PROTECT, null=True, blank=True)
+    review = models.TextField(max_length=1000)
+    review_title = models.TextField(max_length=254)
+    added_on = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ['-added_on']
+
+    def __str__(self):
+        return self.review_name
