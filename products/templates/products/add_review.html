@@ -1,4 +1,4 @@
-{% extends "blogbase.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block page_header %}
@@ -15,15 +15,15 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                <h2 class="logo-font mb-4">Blog Management</h2>
-                <h5 class="text-muted">Edit a Post</h5>
+                <h2 class="logo-font mb-4">Reviews</h2>
+                <h5 class="text-muted">Leave a Review</h5>
                 <hr>
             </div>
         </div>
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'edit_post' slug=post.slug %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_review' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}	
                         {% if field.name != 'image' %}	
@@ -33,9 +33,10 @@
                         {% endif %}	
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-black rounded-0" href="{% url 'blog' %}">Cancel</a>
-                        <button class="btn btn-black rounded-0" type="submit">Edit Product</button>
-                </form>
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Add Review</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

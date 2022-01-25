@@ -3,7 +3,7 @@ from .models import Post, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'date_added', 'author', 'image')
+    list_display = ('title', 'category', 'slug', 'date_added', 'author', 'image')
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
