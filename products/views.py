@@ -153,11 +153,12 @@ def add_review(request, product_id):
                 review.review_author = request.user
                 review.save()
                 messages.success(
-                    request, 'Successfully added your review!')
+                    request, f'Successfully added your review!')
                 return redirect(reverse('product_detail', args=[product.id]))
             else:
                 messages.error(
-                    request, 'Failed to add review. Please ensure the form is valid')
+                    request, f'Failed to add review. Please ensure the form is valid')
+
     context = {
         'form': form
     }

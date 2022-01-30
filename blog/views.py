@@ -61,6 +61,8 @@ def add_post(request):
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('blog'))
 
+    form = PostForm()
+
     if request.method == "POST":
         form = PostForm(request.POST or None, request.FILES or None)
         if form.is_valid():
@@ -74,8 +76,6 @@ def add_post(request):
                 'post_detail', post.slug))
         else:
             messages.error(request, "Failed to add blog post, please ensure the form is valid")
-    else:
-        form = PostForm()
 
     template = 'blog/add_post.html'
     context = {
@@ -87,32 +87,28 @@ def add_post(request):
 
 @login_required
 def edit_post(request, slug):
-    """ edit a blog post """
-    post = Post.objects.get(slug=slug)
-    user = request.user
+    ### Edit a post in blog ###
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, this service is only for store owners')
+        return redirect(reverse('blog'))
 
-    if request.method == "POST":
-        form = PostForm(request.POST or None,
-                        request.FILES or None, instance=post)
-        if request.user == post.author:
-            if form.is_valid():
-                obj = form.save(commit=False)
-                obj.save()
-                post = obj
-                messages.success(request, "Successfully edited your blog post")
-                return redirect(reverse('post_detail', args=[obj.slug]))
-            else:
-                messages.error(request, "Failed to update post.")
+    post = get_object_or_404(Post, slug=slug)
+    if request.method == 'POST':
+        form = PostForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated post: {post.title}!')
+            return redirect(reverse('post_detail', args=[post.slug]))
         else:
-            messages.info(request, 'You are not allowed to do that as you are not the post author!')
+            messages.error(request, f'Failed to update post: {post.name}. Please ensure form is valid and try again.')
     else:
         form = PostForm(instance=post)
-        messages.info(request, f'You are editing {post.title}')
+        messages.info(request, f'You are editing post: {post.name}')
 
     template = 'blog/edit_post.html'
     context = {
-        'post': post,
         'form': form,
+        'post': post,
     }
 
     return render(request, template, context)
