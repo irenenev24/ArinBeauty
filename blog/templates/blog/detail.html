@@ -52,7 +52,7 @@
                             </p>
                                 <p>Posted by: <span class="blog-small">{{ post.author }}</span></p>
                                 <p>{{ post.date_added|date:"M Y h:i" }}</p>
-                               {% if post.author == request.user %}
+                               <!----{% if post.author == request.user %}--->
                                <a href="{% url 'edit_post' post.slug %}" class="button is-danger">Edit Post</a>
                                <a href="{% url 'delete_post' post.slug %}" class="button is-danger is-light">Delete Post</a>
                                {% endif %}

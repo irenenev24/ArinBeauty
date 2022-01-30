@@ -1,13 +1,15 @@
-/* html {
+@import url('https://fonts.googleapis.com/css2?family=Damion&family=Lato&display=swap');
+
+html {
     height: 100%;
     width: 100%;
-} */
+}
 
 body {
     background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato';
-    /* overflow-x: hidden; */
+    height: calc(100vh - 164px);
 }
 /* from Bulma */
 .icon {
@@ -31,7 +33,7 @@ body {
 .small {
     font-weight: bold;
 }
-/* rotwte text */
+/* rotate text */
 .rotate {
     font-size: 110px;
     -webkit-transform: rotate(-10deg);
@@ -439,8 +441,8 @@ input[name='q']::placeholder {
     }
 }
 .card-img-top{
-    height: 200px !important;
-    width: 200px !important;
+    height: 200px;
+    width: 200px;
 }
 
 .flex-container {
@@ -457,6 +459,7 @@ input[name='q']::placeholder {
 
   .container-sustain{
       background-color:rgb(255, 248, 239);
+      z-index: -1;
       padding: 40px 20px;
   }
   .history {
@@ -472,4 +475,39 @@ input[name='q']::placeholder {
     background-size: cover;
     z-index: -3 !important;
     overflow-x: hidden;
+}
+
+.team-image {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+}
+.team {
+    color: #36454f;
+    font-size: 1rem;
+}
+.team-role {
+    color: #36454f;
+    font-size: 1.3rem;
+}
+.team-heading{
+    font-size: 1.4rem;
+}
+.signature{
+    font-family: 'Damion', cursive;
+    font-size: 2rem;
+}
+@media (max-width: 991px) {
+.team-image {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    padding-bottom: 5px;
+}
+.team-role {
+    font-size: .9rem;
+}
+.team {
+    font-size: .7rem;
+}
 }

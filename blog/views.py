@@ -18,6 +18,8 @@ def sustainability(request):
 
 def blog(request):
     posts = Post.objects.all()
+    for post in posts:
+        print(post.id, post.slug)
     
     template = 'blog/blog.html'
     context = {
@@ -66,11 +68,10 @@ def add_post(request):
             author = request.user
             obj.author = author
             obj.save()
-
+            post = obj
             messages.success(request, f'Successfully added {post.title}!')
             return redirect(reverse(
-                'post_detail',
-                slug=post.slug))
+                'post_detail', post.slug))
         else:
             messages.error(request, "Failed to add blog post, please ensure the form is valid")
     else:

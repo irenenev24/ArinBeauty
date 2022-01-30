@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.db.models.signals import pre_save
+from django.utils.text import slugify
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
 
 class Category(models.Model):
     title = models.CharField(max_length=255) 
@@ -15,7 +18,7 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=20, unique=True)
+    title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     date_added = models.DateTimeField(auto_now_add=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
@@ -39,3 +42,15 @@ class Comment(models.Model):
 
     def __str__(self):
         return '%s -%s' % (self.post.title, self.name)
+
+@receiver(post_delete, sender=Post)
+def submission_delete(sender, instance, **kwargs):
+    instance.image.delete(False)
+
+def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = slugify(
+            instance.title + "-" + instance.title)
+
+
+pre_save.connect(pre_save_blog_post_receiver, sender=Post)

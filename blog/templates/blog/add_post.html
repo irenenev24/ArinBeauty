@@ -20,7 +20,13 @@
             <div class="column is-6-desktop is-10-tablet is-12-mobile">
                 <form action="{% url 'add_post' %}" enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
-                    {{ form | crispy }}
+                    {% for field in form %}	
+                        {% if field.name != 'image' %}	
+                            {{ field | as_crispy_field }}	
+                        {% else %}	
+                            {{ field }}	
+                        {% endif %}	
+                    {% endfor %}
                     <div class="is-justify-content-space-between blog-buttons columns has-text-centered">
                         <div class="column is-4-mobile">
                             <button class="button is-danger" type="submit">Add Post</button>

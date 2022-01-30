@@ -44,8 +44,9 @@
                             </figure>
                         </div>
                         {% endif %}
-                    <br>
-                    <h2 class="title">
+                        <br>
+                        <div class="title blog-title">
+                        <h2>
                             {{ post.title }}
                         </h2>
                         <time>{{ post.date_added|date:"M Y h:i" }}</time>
@@ -53,7 +54,9 @@
                         <p>{{ post.intro }}</p>
                         <a href="{% url 'post_detail' post.slug %}">Read More...</a>
                     </div>
+                    </div>
                     </article>
+                    <br>
                     <br>
                 {% endfor %}
             </div>
