@@ -5,18 +5,6 @@ from django.utils.text import slugify
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
 
-class Category(models.Model):
-    title = models.CharField(max_length=255) 
-    slug = models.SlugField()
-
-    class Meta:
-        ordering = ('title',)
-        verbose_name_plural = 'Categories'
-
-    def __str__(self):
-        return self.title
-
-
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)

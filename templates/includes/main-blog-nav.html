@@ -6,7 +6,7 @@
                 Blog
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
-                <a href="{% url 'blog' %}" class="dropdown-item">Blog Content</a>	
+                <a href="{% url 'blog' %}" class="dropdown-item">Blog Posts</a>	
             </div>
         </li>
         
@@ -16,16 +16,6 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
                 <a href="{% url 'about' %}" class="dropdown-item">Our Story</a>
-            </div>
-        </li>
-
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="cosmetics-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Categories
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
-                <a href="" class="dropdown-item">Foundation</a>
-                <a href="" class="dropdown-item">Makeup Tutorials</a>
             </div>
         </li>
 
@@ -44,6 +34,15 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
                 <a href="{% url 'sustainability' %}" class="dropdown-item">Our Promise</a>	
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="cosmetics-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Shop
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="christmas-link">
+                <a href="{% url 'store' %}" class="dropdown-item">Shop</a>
             </div>
         </li>
     </ul>

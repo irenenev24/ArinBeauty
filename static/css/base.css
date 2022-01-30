@@ -491,11 +491,14 @@ input[name='q']::placeholder {
     font-size: 1.3rem;
 }
 .team-heading{
-    font-size: 1.4rem;
+    font-size: 1.9rem;
 }
 .signature{
     font-family: 'Damion', cursive;
     font-size: 2rem;
+}
+.sustain-title{
+    font-size: 1.5rem;
 }
 @media (max-width: 991px) {
 .team-image {
