@@ -20,7 +20,7 @@
         "sku": "pp3452617263",
         "name": "Face Cream",
         "description": "Face Cream",
-        "price": 4500.00,
+        "price": 45.00,
         "category": 1,
         "rating": 5,
         "image_url": "",
@@ -46,7 +46,7 @@
         "model": "products.product",
         "fields": {
           "sku": "pp3452617263",
-          "name": " Nettle Oil Serum",
+          "name": "Nettle Oil Serum",
           "description": "A refreshing serum using the power of neetle natural oil to wake up tired skin.",
           "price": 45.00,
           "category": 1,
@@ -54,7 +54,21 @@
           "image_url": "",
           "image": "photo-1618330834871-dd22c2c226ca.jpg"
         }
-    }
+    },
+    {
+      "pk": 5,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp3452617267",
+        "name": "Rosehip Oil",
+        "description": "A refreshing serum using the power of rosehip natural oil to soothe dry skin.",
+        "price": 45.00,
+        "category": 1,
+        "rating": 4,
+        "image_url": "https://unsplash.com/photos/tnWjbdPmk1M",
+        "image": "rosehip-oil.jpg"
+      }
+  }
   ]
 
 

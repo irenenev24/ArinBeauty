@@ -25,11 +25,13 @@ body {
     text-transform: none;
     margin: 5px;
     font-family: 'Damion', cursive;
-    color: rgb(206, 180, 34);
-    text-shadow: 4px 4px #000;
+    color: #d9a95f;
+    text-shadow: 2px 2px #000;
+    font-size: 1.4rem;
 }
 .small {
     font-weight: bold;
+    font-size: 1rem;
 }
 /* rotate text */
 .rotate {
