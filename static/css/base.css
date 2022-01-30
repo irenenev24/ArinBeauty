@@ -1,15 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Damion&family=Lato&display=swap');
-
 html {
     height: 100%;
     width: 100%;
 }
 
 body {
-    background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
+    background: url('/media/black-gift.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato';
-    height: calc(100vh - 164px);
+    height: calc(150vh - 164px);
 }
 /* from Bulma */
 .icon {
@@ -513,4 +511,9 @@ input[name='q']::placeholder {
 .team {
     font-size: .7rem;
 }
+}
+
+.hero-foot{
+    background-color: #000;
+    color: #fff;
 }
