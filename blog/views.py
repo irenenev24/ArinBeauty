@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
-from .models import Category, Post
+from .models import Post
 from .forms import CommentForm, PostForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -16,16 +17,15 @@ def sustainability(request):
     return render(request, 'blog/sustainability.html')
 
 def blog(request):
-    ### View to render the main blog page ###
     posts = Post.objects.all()
-
+    
+    template = 'blog/blog.html'
     context = {
-        'posts': posts
+        'posts': posts,
     }
+    return render(request, template, context)
 
-    return render(request, 'blog/blog.html', context)
-
-def detail(request, category_slug, slug):
+def detail(request, slug):
     ### View to render the blog page with the posts ###
     post = get_object_or_404(Post, slug=slug)
 
@@ -39,7 +39,6 @@ def detail(request, category_slug, slug):
 
             return redirect(
                 'post_detail',
-                category_slug=post.category.slug,
                 slug=post.slug
             )
     else:
@@ -51,12 +50,6 @@ def detail(request, category_slug, slug):
     }
 
     return render(request, 'blog/detail.html', context)
-
-def category(request, slug):
-    ### View to render the blog category page ###
-    category = get_object_or_404(Category, slug=slug)
-
-    return render(request, 'blog/category.html', {'category': category})
 
 
 @login_required
@@ -77,7 +70,6 @@ def add_post(request):
             messages.success(request, f'Successfully added {post.title}!')
             return redirect(reverse(
                 'post_detail',
-                category_slug=post.category.slug,
                 slug=post.slug))
         else:
             messages.error(request, "Failed to add blog post, please ensure the form is valid")
@@ -125,7 +117,7 @@ def edit_post(request, slug):
     return render(request, template, context)
 
 @login_required
-def delete_post(request, post_slug):
+def delete_post(request, slug):
     # Delete a post from the blog 
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, this service is only for store owners')

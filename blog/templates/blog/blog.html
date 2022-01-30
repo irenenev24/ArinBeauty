@@ -19,7 +19,7 @@
         <br>
         <br>
         <br>
-        <br>
+      <br>
     <div class="container">
         <div class="row">
             <div class="col">
@@ -29,38 +29,33 @@
                 <br>
                 {% for post in posts %}
                     <article class="container container-sustain">
-                            {% if post.image %}
-                <a href="{% url 'post_detail' post.category.slug post.slug  %}">
-                    <div class="card-image">
-                        <figure class="image">
-                            <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
-                        </figure>
-                    </div>
-                </a>
-                {% else %}
-                    <br>  
-                    <h3>Description</h3>
+                        {% if post.image %}
+                        <a href="{% url 'post_detail' post.slug %}">
+                            <div class="card-image">
+                                <figure class="image">
+                                    <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
+                                </figure>
+                            </div>
+                        </a>
+                        {% else %}
+                        <div class="card-image">
+                            <figure class="image is-3by4">
+                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
+                            </figure>
+                        </div>
+                        {% endif %}
                     <br>
-                    <p>{{ post.content }}</p>
-                    <br>
-                    <h5><small>Author: {{ post.author }}</small></h5>
-                <hr>
-                {% endif %}
-                        <h2 class="title">
+                    <h2 class="title">
                             {{ post.title }}
                         </h2>
                         <time>{{ post.date_added|date:"M Y h:i" }}</time>
+                        <h5><small>Author: {{ post.author }}</small></h5>
                         <p>{{ post.intro }}</p>
-                        <a href="{% url 'post_detail' post.category.slug post.slug %}">Read More...</a>
+                        <a href="{% url 'post_detail' post.slug %}">Read More...</a>
                     </div>
                     </article>
                     <br>
                 {% endfor %}
             </div>
         </div>
-{% endblock %}
-
-{% block page_footer %}
-{% endblock %}
-{% block postloadjs %}
 {% endblock %}

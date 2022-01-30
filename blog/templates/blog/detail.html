@@ -19,34 +19,39 @@
                 <hr><br>
                         <article class="content container-sustain">
                             <h1 class="text-center">{{ post.title }}</h1>
-                                <p><small>Category: 
-                                    <a href="{% url 'category_detail' post.category.slug %}">{{ post.category }}  </a></small>
-                                <br><time>{{ post.date_added|date:"h:i M Y" }}</time></p>
                         <hr>
-                        {% if post.image %}
-                        <a href="{% url 'post_detail' post.category.slug post.slug %}">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="{{ post.image }}" alt="image for {{ post.title }}" class="product-image">
-                                </figure>
-                            </div>
-                        </a>
-                        {% else %}
+                        
+                    {% if post.image %}
+                    <a href="{% url 'post_detail' post.slug %}">
+                        <div class="card-image">
+                            <figure class="image">
+                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
+                            </figure>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="card-image">
+                        <figure class="image is-3by4">
+                            <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
+                        </figure>
+                    </div>
+                    {% endif %}
                             <br>  
-                            <h3>Description</h3>
+                            <h3>{{ post.title }}</h3>
                             <br>
-                            <p>{{ post.content }}</p>
+                            <h4>{{ post.intro }}<h4>
+                                <p>{{ post.content }}</p>
                             <br>
-                            <h5><small>Author: {{ post.author }}</small></h5>
+                            <h5><small>Author: {{ post.author }}</h5>
+                            <time>{{ post.date_added|date:"M Y h:i" }}</small></time></p>
                         <hr>
-                        {% endif %}
                     {% if request.user.is_superuser %}
                     <div class="content container-sustain">
                             <p class="m1-3">
                                 <a href="{% url 'add_post' %}">Add a blog post</a>
                             </p>
                                 <p>Posted by: <span class="blog-small">{{ post.author }}</span></p>
-                                <p>{{ post.created_on|timesince }} ago</p>
+                                <p>{{ post.date_added|date:"M Y h:i" }}</p>
                                {% if post.author == request.user %}
                                <a href="{% url 'edit_post' post.slug %}" class="button is-danger">Edit Post</a>
                                <a href="{% url 'delete_post' post.slug %}" class="button is-danger is-light">Delete Post</a>
