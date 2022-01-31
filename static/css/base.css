@@ -7,8 +7,9 @@ body {
     background: url('/media/black-gift.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato';
-    height: calc(200vh - 164px);
+    height: calc(150vh - 134px);
 }
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -439,10 +440,6 @@ input[name='q']::placeholder {
         color: #000 !important;
         
     }
-}
-.card-img-top{
-    height: 200px;
-    width: 200px;
 }
 
 .flex-container {
