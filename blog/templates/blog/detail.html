@@ -44,7 +44,7 @@
                             <br>
                             <h5><small>Author: {{ post.author }}</h5>
                             <time>{{ post.date_added|date:"M Y h:i" }}</small></time></p>
-                        <hr>
+                        <br>
                     {% if request.user.is_superuser %}
                     <div class="content container-sustain">
                             <p class="m1-3">

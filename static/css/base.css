@@ -7,7 +7,7 @@ body {
     background: url('/media/black-gift.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato';
-    height: calc(150vh - 164px);
+    height: calc(200vh - 164px);
 }
 /* from Bulma */
 .icon {
@@ -25,7 +25,7 @@ body {
     text-transform: none;
     margin: 5px;
     font-family: 'Damion', cursive;
-    color: #d9a95f;
+    color: #daac69;
     text-shadow: 2px 2px #000;
     font-size: 1.4rem;
 }
@@ -515,7 +515,8 @@ input[name='q']::placeholder {
 }
 }
 
-.hero-foot{
-    background-color: #000;
-    color: #fff;
+@media (max-width: 991px) {
+    body {
+        height: calc(100vh -44px);
+}
 }

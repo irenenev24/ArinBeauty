@@ -28,7 +28,7 @@
                 <hr>
                 <br>
                 {% for post in posts %}
-                    <article class="container container-sustain">
+                    <article class="container-fluid container-sustain">
                         {% if post.image %}
                         <a href="{% url 'post_detail' post.slug %}">
                             <div class="card-image">

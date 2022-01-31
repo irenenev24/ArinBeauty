@@ -33,17 +33,10 @@ class Product(models.Model):
 
 
 class Review(models.Model):
-    product = models.ForeignKey(
-        Product, default=None, on_delete=models.PROTECT, related_name="reviews")
-    review_author = models.ForeignKey(
-        User, on_delete=models.PROTECT, null=True, blank=True)
-    review = models.TextField(max_length=1000, null=True, blank=True,)
-    review_title = models.TextField(max_length=254, null=True, blank=True,)
-    date_added = models.DateTimeField(auto_now_add=True)
-    active = models.BooleanField(default=True)
-
-    class Meta:
-        ordering = ['-date_added']
+    product = models.ForeignKey(Product, related_name="reviews", on_delete=models.CASCADE)
+    name = models.CharField(max_length=255, null=True)
+    description = models.TextField(max_length=2000, unique=True, null=True)
+    date_added = models.DateTimeField(auto_now_add=True, null=True)
 
     def __str__(self):
-        return self.review_title
+        return '%s -%s' % (self.product.description, self.name)

@@ -1,9 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import pre_save
-from django.utils.text import slugify
-from django.db.models.signals import post_delete
-from django.dispatch import receiver
 
 class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -23,22 +19,10 @@ class Post(models.Model):
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
-    title = models.CharField(max_length=20, unique=True, null=True)
+    title = models.CharField(max_length=40, unique=True, null=True)
     name = models.CharField(max_length=255)
     description = models.TextField()
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return '%s -%s' % (self.post.title, self.name)
-
-@receiver(post_delete, sender=Post)
-def submission_delete(sender, instance, **kwargs):
-    instance.image.delete(False)
-
-def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
-    if not instance.slug:
-        instance.slug = slugify(
-            instance.title + "-" + instance.title)
-
-
-pre_save.connect(pre_save_blog_post_receiver, sender=Post)
