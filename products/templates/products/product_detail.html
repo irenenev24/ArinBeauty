@@ -11,10 +11,10 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container-fluid">
+    <div class="container-fluid product-top">
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
+                <div class="image-container">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
                             <img class="card-img img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
@@ -91,27 +91,30 @@
                             </div>
                             </form>
                             </div>
+                            </div>
+                            </div>
                             <!-- Reviews Section -->
-                            <div class="container-sustain">
-                                <h5>Reviews</h5>
-                                    <!--Placeholder if no reviews posted yet.-->
-                                    {% if not post.reviews.all %}
-                                        <p>No reviews yet.</p>
-                                    {% endif %}
-                                    <!--For customers comments to appear on the review broducts-->
-                                    {% for review in product.reviews.all %}
-                                        <article>
-                                            <p>{{ review.description }}<br> by {{ review.name }} <br><small>{{ review.date_added }}</small></p>
-                                        </article>
-                                    {% endfor %}
-                                    <!--For customers to post reviews on the review products-->
-                                    <h5>Add a review</h5>
-                                    <form method="POST" action=".">
-                                        {% csrf_token %}
-                                        {{ form | crispy }}
-                                        <input type="submit" value="Add review">
-                                    </form>
-                                </article>
+                                <div class="container-sustain">
+                                    <h5>Reviews</h5>
+                                        <!--Placeholder if no reviews posted yet.-->
+                                        {% if not post.comments.all %}
+                                            <p>No comments yet.</p>
+                                        {% endif %}
+                                        <!--For customers reviews to appear on the page-->
+                                        {% for review in product.reviews.all %}
+                                            <article>
+                                                <h5>Read customer reviews:</h5>
+                                                <p>{{ review.title }} <br>
+                                                    {{ review.description }}<br> by {{ review.name }} <br><small>{{ review.date_added }}</small></p>
+                                            </article>
+                                        {% endfor %}
+                                        <!--For customers to post reviews on the products-->
+                                        <h5>Want to review a product? Leave it here...</h5>
+                                        <form method="POST" action=".">
+                                            {% csrf_token %}
+                                            {{ form | crispy }}
+                                            <input type="submit" value="Add review">
+                                        </form>
                             </div>
                         </div>
                     </div>

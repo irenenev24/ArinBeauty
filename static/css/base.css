@@ -4,12 +4,11 @@ html {
 }
 
 body {
-    background: url('/media/black-gift.jpg') no-repeat center center fixed;
+    background: url('/media/gift.jpg') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     font-family: 'Lato';
 }
-
 
 /* from Bulma */
 .icon {
@@ -22,6 +21,7 @@ body {
 .logo-font {
     text-transform: none;
     margin: 5px 30px;
+    font-size: 1.2rem;
 }
 .logo-font-header {
     text-transform: none;
@@ -29,15 +29,16 @@ body {
     font-family: 'Damion', cursive;
     color: #daac69;
     text-shadow: 2px 2px #000;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 .small {
     font-weight: bold;
+    color: #fff;
     font-size: 1rem;
 }
 /* rotate text */
 .rotate {
-    font-size: 110px;
+    font-size: 80px;
     -webkit-transform: rotate(-10deg);
     -moz-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
@@ -61,7 +62,7 @@ body {
     background: #000;
     color: white;
     border-radius: 10px !important;
-    min-width: 260px;
+    min-width: 240px;
 }
 
 .btn-black {
@@ -132,7 +133,7 @@ body {
     width: 100%;
     height: 100%;
     background: url('/media/snow.jpg');
-    z-index: -2;
+    z-index: -3;
 }
 .snow:nth-child(1){
     animation: animate 10s linear infinite;
@@ -356,7 +357,10 @@ input[name='q']::placeholder {
 }
 
 /* Product Form */
-
+.img-fluid{
+    height: 320px;
+    width: 340px;
+}
 .btn-file{
     position: relative;
     overflow: hidden;
@@ -387,18 +391,10 @@ input[name='q']::placeholder {
 }
 
 .logo-overlay {
-        background: url('/media/logo.png') no-repeat center center fixed;
+        background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
         background-size: cover;
         height: calc(80vh - 130px);
 }
-
-.hero-foot {
-    border-top: 3px #008B8B solid;
-    padding: 20px;
-}
-.footer {
-    flex-shrink: 0;
-  }
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
@@ -441,8 +437,31 @@ input[name='q']::placeholder {
         color: #000 !important;
         
     }
+    .rotate{
+        font-size: 60px;
+    }
+    .small{
+        font-size: 15px;
+    }
+    .img-fluid{
+        height: 200px;
+        width: 200px;
+    }
+    .logo-font-banner{
+        font-size: 25px;
+    }
+    .euro{
+        font-size: 25px;
+    }
 }
-
+@media (min-width: 655px){
+    .logo-font-banner{
+        font-size: 35px;
+    }
+    .euro{
+        font-size: 35px;
+    }
+}
 .flex-container {
     display: flex;
   }
@@ -522,16 +541,19 @@ input[name='q']::placeholder {
     margin-top: 280px;
     width: 100vw;
 }
-.blog-width{
+.blog-top-small{
     width: 100vw;
-    
+    margin-top: 100px; 
 }
 
 footer{
-        position:fixed;
+        position: relative;
         bottom:0;
         width:100%;
-        height:40px;   /* Height of the footer */
+        height:100px;   /* Height of the footer */
         background:#000;
         color:#fff;
      }
+.comment-review-heading{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
