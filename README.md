@@ -1,12 +1,12 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-# Unfinished #
-
+# Unfinished - ran out of time. Not all code officially credited.#
+some code from codewithstein for blog/comments
 snow banner made using online tutorials on youtube. (online tutorials is the company name)
 gold snow image from adobe stock
 serum bottle image from freepik
 other pictures from unsplash
-
+google font for fonts and font awesome for icons
 # Mission Statement
 - To provide an easily accessible site for the promotion and sale of beauty products. To showcase the Arin Beauty Products Company and its history and sustainability.
 
