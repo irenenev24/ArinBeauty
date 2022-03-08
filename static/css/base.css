@@ -7,7 +7,6 @@ body {
     background: url('/media/black-gift.jpg') no-repeat center center fixed;
     background-size: cover;
     font-family: 'Lato';
-    height: calc(150vh - 134px);
 }
 
 /* from Bulma */
