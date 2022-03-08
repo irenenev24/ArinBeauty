@@ -143,12 +143,21 @@
     {% block content %}
     {% endblock content %}
     
-<footer>copyright</footer>
+
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
     {% endblock %} 
+    <footer>
+       <div class="left">
+            <a href="{% url 'products' %}">SHOP</a>
+       </div>
+       <div class="right">
+        <a href="blog.html">BLOG</a>
+    </div> 
+    <div class="center">© ARINBEAUTYPRODUCTS 2022</div>
+</footer>
 </body>
 </html>
 
