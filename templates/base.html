@@ -49,9 +49,7 @@
                     <div id="topnav" class="row bg-black pt-lg-2 d-none d-lg-flex">
                         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                             <a href="{% url 'home' %}" src="/media/logo-resized.png" class="nav-link main-logo-link"></a>
-                            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
-                                
-                            </div>
+                            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left"></div>
                 </div>
                 <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                     <form method="GET" action="{% url 'products' %}">
@@ -142,22 +140,21 @@
     {% endif %}
     {% block content %}
     {% endblock content %}
-    
+    <footer>
+        <div class="left">
+             <a href="{% url 'products' %}">SHOP</a>
+        </div>
+        <div class="right">
+         <a href="blog.html">BLOG</a>
+     </div> 
+     <div class="center">© ARINBEAUTYPRODUCTS 2022</div>
+ </footer>
 
     {% block postloadjs %}
     <script type="text/javascript">
         $('.toast').toast('show');
     </script>
-    {% endblock %} 
-    <footer>
-       <div class="left">
-            <a href="{% url 'products' %}">SHOP</a>
-       </div>
-       <div class="right">
-        <a href="blog.html">BLOG</a>
-    </div> 
-    <div class="center">© ARINBEAUTYPRODUCTS 2022</div>
-</footer>
+    {% endblock %}
 </body>
 </html>
 

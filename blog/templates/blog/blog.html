@@ -16,11 +16,9 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class="logo-font mb-4 text-center">Arin Beauty Blog</h2>
-                <hr>
-                <br>
+                <h2 class="logo-font-large mb-4 text-center">Arin Beauty Blog</h2>
                 {% for post in posts %}
-                    <article class="container container-sustain">
+                    <article class="container blog-container container-sustain">
                         {% if post.image %}
                         <a href="{% url 'post_detail' post.slug %}">
                             <div class="card-image">
@@ -48,8 +46,6 @@
                     </div>
                     </div>
                     </article>
-                    <br>
-                    <br>
                 {% endfor %}
             </div>
             </div>

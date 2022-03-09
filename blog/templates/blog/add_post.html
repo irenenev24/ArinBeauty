@@ -7,20 +7,22 @@
         <div class="row">
             <div class="col">
                 <hr>
+                <br>
                 <h2 class="logo-font mb-4 text-center"> Arin Beauty Blog</h2>
                 <hr>
 <div class="hero-body is-fullheight">
     <div class="container">
         <div class="columns is-justify-content-center has-text-centered">
             <div class="column is-10">
-                <h1 class="title-heading">Add A New Blog Post</h1>
+                <h3 class="title-heading">Add A New Blog Post</h3>
             </div>
         </div>
+        <br>
         <div class="columns is-justify-content-center">
             <div class="column is-6-desktop is-10-tablet is-12-mobile">
                 <form action="{% url 'add_post' %}" enctype="multipart/form-data" method="POST">
                     {% csrf_token %}
-                    {% for field in form %}	
+                    {% for field in form %}
                         {% if field.name != 'image' %}	
                             {{ field | as_crispy_field }}	
                         {% else %}	

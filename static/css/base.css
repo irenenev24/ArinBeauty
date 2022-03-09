@@ -4,10 +4,11 @@ html {
 }
 
 body {
-    background: url('/media/gift.jpg') no-repeat center center fixed;
+    background: url('/media/christmas-giftcropped.jpg') no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     font-family: 'Lato';
+    z-index: -2;
 }
 
 /* from Bulma */
@@ -21,15 +22,15 @@ body {
 .logo-font {
     text-transform: none;
     margin: 5px 30px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 .logo-font-header {
     text-transform: none;
     margin: 5px;
     font-family: 'Damion', cursive;
     color: #daac69;
-    text-shadow: 2px 2px #000;
-    font-size: 1.2rem;
+    text-shadow: 4px 4px #000;
+    font-size: 1.3rem;
 }
 .small {
     font-weight: bold;
@@ -38,7 +39,7 @@ body {
 }
 /* rotate text */
 .rotate {
-    font-size: 80px;
+    font-size: 100px;
     -webkit-transform: rotate(-10deg);
     -moz-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
@@ -294,16 +295,6 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* -------------------------------- Media Queries */
-
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
 /* Allauth form formatting */
 .allauth-form-inner-content p{
     margin-top: 1.5rem; /* mt-4 */
@@ -389,79 +380,20 @@ input[name='q']::placeholder {
 .logo-container {
     background-color: #000;
 }
+.logo-font-large{
+    margin-top: 120px;
+    font-size: 1.9rem;
+}
 
 .logo-overlay {
         background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
         background-size: cover;
         height: calc(80vh - 130px);
 }
-
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 250px;
-    }
+.comment-review-heading{
+    font-family:'Times New Roman', Times, serif;
 }
 
-/* fixed top navbar only on small screens */
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 220px;
-    }
-
-    
-    .display-4.logo-font.text-black {
-        font-size: 2rem;
-    }
-
-    .nav-link {
-        padding: 0.15rem;
-    }
-
-    .nav-link i.fa-lg {
-        font-size: 1rem;
-    }
-
-    .navbar-toggler {
-        padding: .6rem .6rem;
-        font-size: 1rem;
-        border-color: #000 !important;
-        color: #000 !important;
-        
-    }
-    .rotate{
-        font-size: 60px;
-    }
-    .small{
-        font-size: 15px;
-    }
-    .img-fluid{
-        height: 200px;
-        width: 200px;
-    }
-    .logo-font-banner{
-        font-size: 25px;
-    }
-    .euro{
-        font-size: 25px;
-    }
-}
-@media (min-width: 655px){
-    .logo-font-banner{
-        font-size: 35px;
-    }
-    .euro{
-        font-size: 35px;
-    }
-}
 .flex-container {
     display: flex;
   }
@@ -517,33 +449,12 @@ input[name='q']::placeholder {
 .sustain-title{
     font-size: 1.5rem;
 }
-@media (max-width: 991px) {
-.team-image {
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
-    padding-bottom: 5px;
-}
-.team-role {
-    font-size: .9rem;
-}
-.team {
-    font-size: .7rem;
-}
-}
-
-@media (max-width: 991px) {
-    body {
-        height: calc(100vh -44px);
-}
-}
 .product-top, .blog-top{
-    margin-top: 280px;
+    margin-top: 180px;
     width: 100vw;
 }
 .blog-top-small{
     width: 100vw;
-    margin-top: 100px; 
 }
 
 footer{
@@ -554,6 +465,110 @@ footer{
         background:#000;
         color:#fff;
      }
-.comment-review-heading{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+/* -------------------------------- Media Queries */
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+  
+/* fixed top navbar only on small screens */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 220px;
+    }
+    
+    .display-4.logo-font.text-black {
+        font-size: 2rem;
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+        border-color: #000 !important;
+        color: #000 !important;
+        
+    }
+    .rotate{
+        font-size: 50px;
+    }
+    .small{
+        font-size: 15px;
+    }
+    .img-fluid{
+        height: 200px;
+        width: 200px;
+    }
+    img{
+        height: 100vw;
+        width: 80vw;
+    }
+    .blog-container{
+        height:auto;
+        width: fit-content;
+    }
+    .logo-font-banner{
+        font-size: 25px;
+    }
+    .euro{
+        font-size: 25px;
+    }
+}
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 250px;
+    }
+}
+@media (min-width: 655px){
+    .logo-font-banner{
+        font-size: 35px;
+    }
+    .euro{
+        font-size: 35px;
+    }
+}
+@media (max-width: 991px) {
+    .team-image {
+        height: 80px;
+        width: 80px;
+        object-fit: cover;
+        padding-bottom: 5px;
+    }
+    .team-role {
+        font-size: .9rem;
+    }
+    .team {
+        font-size: .7rem;
+    }
+    body {
+        height: calc(100vh -44px);
+    }
+}
+    
+@media (min-width: 991px) {
+    .product-top, .blog-top-small{
+        margin-top: 280px;
+    }
+}
+.checkout{
+    width: 100%;
+    margin-top: 280px;
 }
