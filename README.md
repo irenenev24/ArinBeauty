@@ -1,5 +1,7 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-[See the live site here!](https://arin-beauty.herokuapp.com/)
+
+#[See the live site here!]Visit the live site here: (https://arin-beauty.herokuapp.com/)
+![Image showing the website displayed on different screen sizes](media/multi-device-image.png)
 
 # Educational Purposes
 This website is for educational purposes and checkout functionality is set up to accept stripe test card details. Please don't enter your personal card details.
