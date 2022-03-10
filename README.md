@@ -241,8 +241,9 @@ For further information please see the Browser Compatibility section in TESTING.
 Information Architecture
 
 Database diagram made using [dbdiagram.io](https://dbdiagram.io/).
-[Schema](media/schema.png)
+![Schema](media/schema.png)
 
+![Add Product Form](media/product-page.png)
 Products Models
 Products App -
   Product: Holds the information for each individual product.
@@ -258,7 +259,9 @@ Checkout Models
  - OrderLineItem line_item_total field is automatically calculated on save.
 
 Profiles Models
+![Profile Page](media/profile-page.png)
  - UserProfile - related to Order and User. Stores default delivery information. UserProfile is automatically created or updated using a Django receiver when a User object is updated or created.
+ - Order History is stored in the user profile aswell.
 
 Cart Models
 Cart - related to User. Stripe webhooks.
@@ -273,6 +276,14 @@ User
 User Profile App
   - User Profile: Holds user default delivery information
 
+Admin Product Management
+  - Add product form for admin to input a new product to the store.
+  - If 'has variations' is selected, submitting the form will redirect the admin to add variations of the product.
+  - Add product variations page displays existing variations and offers the admin the ability to add additional variations as well as edit and delete existing variations.
+
+    ![Add Product Form](media/product-management.png)
+
+    ![Edit Product](media/edit-product.png)
 
 # Unfinished - ran out of time. Not all code officially credited.#
 some code from codewithstein for blog/comments
