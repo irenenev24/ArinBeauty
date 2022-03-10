@@ -1,12 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+[See the live site here!](https://arin-beauty.herokuapp.com/)
 
-# Unfinished - ran out of time. Not all code officially credited.#
-some code from codewithstein for blog/comments
-snow banner made using online tutorials on youtube. (online tutorials is the company name)
-gold snow image from adobe stock
-serum bottle image from freepik
-other pictures from unsplash
-google font for fonts and font awesome for icons
 # Educational Purposes
 This website is for educational purposes and checkout functionality is set up to accept stripe test card details. Please don't enter your personal card details.
 
@@ -15,8 +9,8 @@ To process a test stripe payment at checkout, please use the following details.
 card number : 4242 4242 4242 4242
 Any date
 Any CVV number
-# Database Schema
-[Schema](media/schema.png)
+
+
 # Mission Statement
 - To provide an easily accessible site for the promotion and sale of beauty products. To showcase the Arin Beauty Products Company and its history and sustainability.
 
@@ -244,23 +238,44 @@ For further information please see the Browser Compatibility section in TESTING.
 [Structure](#structure)
 Information Architecture
 
+Database diagram made using [dbdiagram.io](https://dbdiagram.io/).
+[Schema](media/schema.png)
 
 Products Models
-Product - 
-
-Category - 
+Products App -
+  Product: Holds the information for each individual product.
+  Category: Holds the available categories for the products.
 
 Review - related to Product and User. Stores Product Reviews. A Django signal updates the Product rating field when a review is added, deleted or edited.
 
 Checkout Models
-Order - related to OrderLineItem and UserProfile. Stores Orders after successful checkout. Order order_number field is automatically added on save.
-Order discount, order_total, previous_total, delivery and grand_total fields are automatically updated using a Django signal when an OrderLineItem is added or deleted.
+ - Order - related to OrderLineItem and UserProfile. Stores Orders after successful checkout. Order order_number field is automatically added on save.
+ - Order discount, order_total, previous_total, delivery and grand_total fields are automatically updated using a Django signal when an - - -  - OrderLineItem is added or deleted.
 
-OrderLineItem - related to Order, Type, Product and Size. Stores each OrderLineItem after successful checkout.
-OrderLineItem line_item_total field is automatically calculated on save.
+ - OrderLineItem - related to Order, Type, Product and Size. Stores each OrderLineItem after successful checkout.
+ - OrderLineItem line_item_total field is automatically calculated on save.
 
 Profiles Models
-UserProfile - related to Order and User. Stores default delivery information. UserProfile is automatically created or updated using a Django receiver when a User object is updated or created.
+ - UserProfile - related to Order and User. Stores default delivery information. UserProfile is automatically created or updated using a Django receiver when a User object is updated or created.
 
 Cart Models
 Cart - related to User. Stripe webhooks.
+ - Products App
+    - Product: Holds the information for each individual product.
+    - Category: Holds the available categories for the products.
+    - Product Variations: Any variations of a specific product (sizes etc)
+
+User
+  - Created with django allauth containing the customer username, email and password.
+
+User Profile App
+  - User Profile: Holds user default delivery information
+
+
+# Unfinished - ran out of time. Not all code officially credited.#
+some code from codewithstein for blog/comments
+snow banner made using online tutorials on youtube. (online tutorials is the company name)
+gold snow image from adobe stock
+serum bottle image from freepik
+other pictures from unsplash
+google font for fonts and font awesome for icons
