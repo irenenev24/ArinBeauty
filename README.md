@@ -7,6 +7,16 @@ gold snow image from adobe stock
 serum bottle image from freepik
 other pictures from unsplash
 google font for fonts and font awesome for icons
+# Educational Purposes
+This website is for educational purposes and checkout functionality is set up to accept stripe test card details. Please don't enter your personal card details.
+
+To process a test stripe payment at checkout, please use the following details.
+
+card number : 4242 4242 4242 4242
+Any date
+Any CVV number
+# Database Schema
+[Schema](media/schema.png)
 # Mission Statement
 - To provide an easily accessible site for the promotion and sale of beauty products. To showcase the Arin Beauty Products Company and its history and sustainability.
 
