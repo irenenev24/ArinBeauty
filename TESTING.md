@@ -5,6 +5,22 @@
   * [Testing performance](#testing-performance)
   * [Testing accessibility](#testing-accessibility)
   * [known bugs](#known-bugs)
+### [Code Validation](#code-validation)
+
+## HTML5
+All tests passed
+
+## CSS3
+All tests passed
+
+## JavaScript
+All tests passed
+
+## Python
+All tests passed
+
+*Please Note - Warnings and errors were given on most pages due to template logic being used in this project. Certain Python files also failed PEP8 checks due to base code set by Django.*
+### Known Bugs()
   remove button not working in the shopping bag page.
 
   * page would not render as I had not included 'django.template.context_processors.media' in settings.py so my product which at the time lacked an image caused the page to throw an error.
@@ -34,3 +50,4 @@ when stripe was working a new error came up. this error showed that the checkout
 the date wasnt showing on the confirmation email as i had it down as {order.order_date} instead of {order.date}
 
 * add product page didnt open. I used diffchecker.com to check the difference between my code and the video source code. I found a spelling error. A screenshot of this image is included.
+[Responsiveness and Compatibility](#responsiveness-and-compatibility)
