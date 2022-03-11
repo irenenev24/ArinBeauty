@@ -193,12 +193,34 @@ The footer has all the important shop information such as opening hours, contact
 ### Technologies
 #### Integrated Development Environment
 * GitHub
-* Languages
-* HTML
-* CSS
-* JavaScript
-* Python
-* Database
+* Heroku
+
+## Languages Used
+- [Python3](https://www.python.org/downloads/)
+- [JavaScript](https://www.javascript.com/)
+- [CSS3](https://en.wikipedia.org/wiki/CSS)
+- [HTML5](https://en.wikipedia.org/wiki/HTML5)
+
+## Django and Associated Extensions
+
+- [Django](https://www.djangoproject.com/)
+    - Django was was used to create the project and code infrastructure. Django templating language was used when passing data between the Front-end and Back-end.
+
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/installation.html)
+    - Allauth was used to create user registration and login functionality.
+
+- [Django Countries](https://pypi.org/project/django-countries/)
+    - Django Countries was used for formatting of the 'Country' field in the checkout form and in the default user info within the profile section.
+
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/)
+    - Used to format the default django form fields across the site.
+
+
+- [Django Coverage](https://pypi.org/project/django-coverage/)
+    - Used to monitor coverage of automation testing written for the product, product_review and wishlist apps.
+
+- Database
+
 #### Development - SQLite
 * Deployed site - Heroku PostgreSQL
 #### Storage
@@ -227,14 +249,15 @@ The footer has all the important shop information such as opening hours, contact
 * Flake8 - for python code validation.
 * flake8-django - Flake8 plug-in for Django, for python code validation.
 * LAMBDATEST - cross browser testing cloud, for testing across multiple browsers and operating systems.
+
 Browser Support
 Arin Beauty Products supports the following browsers:
 
-Google Chrome
-Microsoft Edge
-Safari
-Firefox
-Opera
+* Google Chrome
+* Microsoft Edge
+* Safari
+* Firefox
+* Opera
 For further information please see the Browser Compatibility section in TESTING.md.
 
 [Structure](#structure)
@@ -285,6 +308,50 @@ Admin Product Management
 
     ![Edit Product](media/edit-product.png)
 
+Messages/Toasts
+ - Messages and Toasts are used when executing certain actions on the site, such as logging in and out, adding and removing products from the shopping bag, completing a transaction, and for admin actions too like adding and editing products.
+### Page Specific Features
+#### Home
+ - Hero image and text to highlight use of site. Shop now button which connects to the all products page and gives users a view of what is on offer. 
+#### Nav Bar
+ - Responsive across the site. for products/home page/checkout etc nav bar shows all products/cosmetics/skin-type/skin-care/christmas/blog.
+ - For the blog pages the navbar shows blog/about us/sustainability/shop.
+ - Nav bar also includes account (register/login) and if logged in (product management/blog management/profile/logout)
+ - Shopping cart also displayed for the store pages
+#### Products
+ - Featured images at the top of each main category page
+ - Product Category buttons so the user can select which sub-category they would like to look at
+ - Basic filtering options to sort products by category, name, price etc.
+ - Basic product info is displayed to the user such as the product image, name, price, category link, and for admins, edit/delete buttons
+ - Users can click on the product images which will take them to the product details page for that particular product
+#### Product Detail
+ - Breadcrumb links feature on these pages
+ - Product details shown to user; image, name, price, edit/delete buttons for admins and description
+ - Quantity selector that allows the user to choose the quantity they would like to purchase
+ - Keep Shopping button that takes the user back to the products page
+ - Add To Bag button that adds the product to the users shopping bag
+ - Review section with user reviews that can be viewed by all users regardless of registered status
+ - If a user is an admin they can edit/delete products. They can add products via product management.
+#### Shopping Bag
+ - Shows the user the product/s that they have in their bag
+ - Displays product image, name, size, SKU
+ - Quantity selector allows user to see how many they have in their shopping bag and amend that amount
+ - Subtotal shows the cost of the product, reflects changes upon quantity amendments
+ - Bag total, delivery and grand total show these amounts to the user
+ - Keep Shopping button allows the user to navigate back to the products page
+ - Secure Checkout buttons takes the customer to the Checkout page
+#### 404/500 Pages
+ - Page displayed when 404/500 error occurs
+ - Large text to display there is an error to the user
+ - Back To Home button so the user can navigate back to the home page
+ - Fun image below the button to give the page a bit of character
+
+### Future Development Opportunities
+
+- An add to favourites section/wishlist section for users to save their favourite products to purchase later.
+
+- For the admin to be able to offer 'recommended products' to registered users based on past purchases in their order history.
+
 # Unfinished - ran out of time. Not all code officially credited.#
 some code from codewithstein for blog/comments
 snow banner made using online tutorials on youtube. (online tutorials is the company name)
@@ -292,3 +359,4 @@ gold snow image from adobe stock
 serum bottle image from freepik
 other pictures from unsplash
 google font for fonts and font awesome for icons
+
