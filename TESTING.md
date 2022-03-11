@@ -20,6 +20,38 @@ All tests passed
 All tests passed
 
 *Please Note - Warnings and errors were given on most pages due to template logic being used in this project. Certain Python files also failed PEP8 checks due to base code set by Django.*
+### First Time Users
+Understand the purpose of the site
+
+Users are shown a hero image which promote the sale of gifts on the home page
+There is also an about section in the blog section which gives an account of what the site is about and how it started.
+Being able to easily sign up for an account
+
+Sign in flows easily and it takes very little time to set up a secure account
+### Returning Users
+Ability to securely log into their account
+
+Account log in is set up by Django and is extremely secure
+Log in process is very quick, and allows a user to save their log in details for next time
+View their past orders and order confirmations
+
+When a user is logged in, if they navigate to the profile page they will be given their Order History
+It will be a brief overview of the users past orders, but if they click on the order number it will take them to the order confirmation page
+This is a historic order confirmation page, but displays all the necessary information that a user would need
+Purchase products and have their orders saved to their profile
+
+All users, regardless of logged in status, will be able to purchase products through the site
+If a user is logged in when they process an order, it will be displayed on their profile order history
+Receive their order confirmations directly to their email inbox
+
+When a user completes an order, they will receive an email to confirm said order
+This goes directly to the email address provided
+I have tested this by using different email addresses from different providers, and all worked
+Leave reviews of products
+
+Logged in users are able to leave product reviews
+On the product details page, reviews are displayed below the main product information display
+User reviews are displayed at the top, and the review form is below them
 ### Known Bugs()
   remove button not working in the shopping bag page.
 
