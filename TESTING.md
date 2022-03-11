@@ -20,6 +20,7 @@ All tests passed
 All tests passed
 
 *Please Note - Warnings and errors were given on most pages due to template logic being used in this project. Certain Python files also failed PEP8 checks due to base code set by Django.*
+# [Testing User stories](#testing-user-stories)
 ### First Time Users
 Understand the purpose of the site
 
@@ -27,26 +28,26 @@ Users are shown a hero image which promote the sale of gifts on the home page
 There is also an about section in the blog section which gives an account of what the site is about and how it started.
 Being able to easily sign up for an account
 
-Sign in flows easily and it takes very little time to set up a secure account
+A user can quickly and easily sign in/create an account.
+I have tested this feature and found it to be working.
 ### Returning Users
-Ability to securely log into their account
+Will have the ability to securely and swiftly log into their account
 
-Account log in is set up by Django and is extremely secure
+All accounts, log in and set up is done by Django and is extremely secure
 Log in process is very quick, and allows a user to save their log in details for next time
-View their past orders and order confirmations
+Profile page contains past orders and order confirmations
+I have tested this feature and found it to be working.
 
 When a user is logged in, if they navigate to the profile page they will be given their Order History
-It will be a brief overview of the users past orders, but if they click on the order number it will take them to the order confirmation page
-This is a historic order confirmation page, but displays all the necessary information that a user would need
-Purchase products and have their orders saved to their profile
+Here users can see their default address and change it if needs be, they can also view their previous orders in a list. They can click on each individual order for more comprehensive details of the order.
+When a user urchases a product it will be saved to their profile
+I have tested this feature and found it to be working.
 
 All users, regardless of logged in status, will be able to purchase products through the site
 If a user is logged in when they process an order, it will be displayed on their profile order history
-Receive their order confirmations directly to their email inbox
+All users will receive an order confirmation email directly to their email inbox
 
-When a user completes an order, they will receive an email to confirm said order
-This goes directly to the email address provided
-I have tested this by using different email addresses from different providers, and all worked
+I have tested this feature and found it to be working.
 Leave reviews of products
 
 Logged in users are able to leave product reviews
