@@ -20,10 +20,35 @@ All tests passed
 All tests passed
 
 *Please Note - Warnings and errors were given on most pages due to template logic being used in this project. Certain Python files also failed PEP8 checks due to base code set by Django.*
+# [Testing performance](#testing-performance)
+# Responsiveness
+ - The site was tested across multiple devices and screens using dev tools and my own devices. Used a hp pavilion, galaxy tab and a samsung s50.
+# Security
+ - I tested all pages with a non admin account to make sure that admin specific features(add/edit/delete) for blogs and products was not accessible without being an admin account holder. This was tested by me copying the links, accessing them on an incognito browser in Google Chrome that I was not logged into, then logging into it with a non-admin user, and trying the links again. The error pops up correctly and advises the user that only admins and site owners can view that page.
+# General Testing For Site Functionality
+* Index.html
+ - On this page I have made it a large image of the store logo and a shop now button which leads into the site. This page acts as a landing page and a welcome to the site.
+* Navbar
+ - Navbar is positioned at top of screen and fixed there.
+ - Links have been found to be working when tested.
+ - Dropdowns appear for all appropiate categories and are functioning as intended. 
+ - Navbar collapses on smaller screens and functions appropiately.
+ - Navbar search bar functions and access correct items
+ - Blog navbar functions correctly and takes user to appropiate pages
+# Home
+ - Home page functions as expected with large button 'shop now' leading to products page
+# Products
+ - All product images are displaying as expected and are responsive across screen sizes'
+ - Also will display individually when clicked on with a description beside the image.
+ - Edit/Delete links for admins work and direct admin to the correct pages
+ - Quantity selector works correctly, by changing the amount of the product using the up/down arrows within the box, at the sides of the box and by using the up/down arrow keys on the users keyboard. Focus colours work as intended
+ - Keep Shopping button hover works, and takes the user back to the products page
+ - Add To Bag button adds the product to the users shopping bag in the correct size (if applicable) and quantity that the user has selected. This is displayed to the user by way of an on screen alert, showing a mini view of the users shopping bag. This was tested using a range of products with different sizes and quantities selected
+ - Reviews section shows reviews that users have left, and allows both the user who submitted the review and the admin to edit the review
+ - If user is logged in, a review form is displayed with the submit button below to submit the review form once they are done
 # [Testing User stories](#testing-user-stories)
 ### First Time Users
 Understand the purpose of the site
-
 Users are shown a hero image which promote the sale of gifts on the home page
 There is also an about section in the blog section which gives an account of what the site is about and how it started.
 Being able to easily sign up for an account
@@ -33,7 +58,7 @@ I have tested this feature and found it to be working.
 ### Returning Users
 Will have the ability to securely and swiftly log into their account
 
-All accounts, log in and set up is done by Django and is extremely secure
+All accounts, log ins and set up is done by Django and is extremely secure
 Log in process is very quick, and allows a user to save their log in details for next time
 Profile page contains past orders and order confirmations
 I have tested this feature and found it to be working.
@@ -84,3 +109,15 @@ when stripe was working a new error came up. this error showed that the checkout
 the date wasnt showing on the confirmation email as i had it down as {order.order_date} instead of {order.date}
 
 * Add product page didnt open. I used diffchecker.com to check the difference between my code and the video source code. 
+### Migrations
+After I had deployed my project to Heroku, I was getting issues with my migrations not being pushed to Heroku correctly. I reset my migrations, but I didn't do this correctly the first time which lead to me needing to do it twice.
+
+To successfully reset my migrations, I deleted all previous migrations and the db.sqlite3 file from GitPod. I then re-ran migrations on GitPod and Heroku, and this fixed the issue I was having.
+#### Unresolved Issues
+- Product reviews linked to product ratings
+I have implemented product reviews on my site, however I was unable to figure out a way to link these up to display as an average rating for the product the reviews are for. I attempted this by following tutorials but was unable to make this work and plan to resolve this issue going forward..
+
+- Footer
+I wanted to add a footer but was met with an issue when doing so. The footer tended to stay around half way down the page and wouldnt stick to the bottom despite numerous attempts. I asked on slack, stack overflow, and my mentor but ultimately due to time constraints the issue is still present. 
+
+- Going forward I would like to break the image file into sub files for product images, blog images and readme images as it is quite a large file. 
