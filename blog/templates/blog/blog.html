@@ -11,43 +11,56 @@
 {% endblock %}
 
 {% block content %}
-    <div class="blog-overlay">
-    <div class="container card">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font-large mb-4 text-center">Arin Beauty Blog</h2>
-                {% for post in posts %}
-                    <article class="container blog-container container-sustain">
-                        {% if post.image %}
-                        <a href="{% url 'post_detail' post.slug %}">
-                            <div class="card-image">
-                                <figure class="image">
-                                    <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
-                                </figure>
-                            </div>
-                        </a>
-                        {% else %}
-                        <div class="card-image">
-                            <figure class="image is-3by4">
-                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
-                            </figure>
-                        </div>
-                        {% endif %}
-                        <br>
-                        <div class="title blog-title">
-                        <h2>
-                            {{ post.title }}
-                        </h2>
-                        <time>{{ post.date_added|date:"M Y h:i" }}</time>
-                        <h5><small>Author: {{ post.author }}</small></h5>
-                        <p>{{ post.intro }}</p>
-                        <a href="{% url 'post_detail' post.slug %}">Read More...</a>
+                <!-- Blog Image -->
+    <div class="blog-overlay"></div>
+    <div class="row text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="{{ MEDIA_URL }}logo.png" alt="decor" class="blog-logo-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-container">
+    <hr class="blog-hr">
+    <!--- To display all the Posts available --->
+    <div class="posts">
+        {% for post in posts %}
+            {% if posts %}
+                <div class="row mt-4">
+                    <div class="col-8 offset-2">
+                        <h3 class="blog-title mt-3">{{ post.title }}</h3>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <div class="text-muted">{{ post.date_added | date:"d M - Y | h:i"}}</div>
                     </div>
-                    </article>
-                {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <article class="review-desc text-muted">{{ post.intro }}</article>
+                            
+                    </div>
+                </div>
+                <div class="row pb-2 mt-3 mb-5">
+                    <div class="col-8 offset-2">
+                        <a href="{% url 'post_detail'  post.slug %}" class="cta-button blog-btn">Read more...</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col-8 offset-2">
+                        <h2> No Posts Available</h2>
+                    </div>
+                </div>
+            {% endif %}
+    {% endfor %}
+</div>
             </div>
             </div>
         </div>
-{% endblock %}
+    </div>
+</div>
+{% endblock %}-->

@@ -10,40 +10,34 @@
 {% endblock %}
 
 {% block content %}
-<div class="blog-overlay"></div>
-    <div class="container blog-large mb-2">
-        <div class="row">
-            <div class="col">
-                        <article class="content blog-container container-sustain">
-                            <h1 class="text-center">{{ post.title }}</h1>
-                        <hr>  
-                    {% if post.image %}
-                    <a href="{% url 'post_detail' post.slug %}">
-                        <div class="card-image">
-                            <figure class="image">
-                                <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="product-image">
-                            </figure>
-                        </div>
-                    </a>
-                    {% else %}
-                    <div class="card-image">
-                        <figure class="image is-3by4">
-                            <img src="{{ post.image.url }}" alt="image for {{ post.title }}">
-                        </figure>
-                    </div>
-                    {% endif %}
-                            <br>  
-                            <h3>{{ post.title }}</h3>
+                <div class="blog-overlay"></div>
+    <div class="row text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <img src="{{ post.image.url }}" alt="image for {{ post.title }}" class="blog-logo-img">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="blog-container-detail">
+    <hr class="blog-hr">
+                        <article class="content blog-container ">
+                            <h3 class="text-center">{{ post.title }}</h3>
                             <br>
-                            <h4>{{ post.intro }}</h4>
-                                <p>{{ post.content }}</p>
-                            <h5><small>Posted By: {{ post.author }}</h5>
-                            <time>{{ post.date_added|date:"M Y h:i" }}</small></time></p>
+                            <hr>
+                            <p class="text-center">{{ post.intro }}
+                            <br>
+                            <br>
+                            {{ post.content }}</p>
+                            <h5 class="text-center">Posted By: {{ post.author }}</h5>
+                            <time class="text-center"><small>{{ post.date_added|date:"M Y h:i" }}</small></time></p>
                         <br>
+                        <hr>
                     {% if request.user.is_superuser %}
-                    <div class="content container-sustain">
+                    <div class="content text-center">
                                <!----{% if post.author == request.user %}--->
-                               <p class="m1-3">
+                               <p class="m1-3">ADMIN CONTROLS<br>
                                 <a href="{% url 'add_post' %}">Add a blog post</a>
                                 <br>
                                <a href="{% url 'edit_post' post.slug %}" class="button is-danger">Edit Post</a>
@@ -53,21 +47,24 @@
                                {% endif %}
                            </div>
                     {% endif %}
-                <div class="container-sustain">
-                <h5 class="comment-review-heading">Comments</h5>
+                    <hr>
+                <div class="text-center">
+                <h4 class="comment-review-heading">Comments</h4>
+                <hr>
                     <!--Placeholder if no comments posted yet.-->
                     {% if not post.comments.all %}
                         <p>No comments yet.</p>
                     {% endif %}
                     <!--For customers comments to appear on the review blogs-->
                     {% for comment in post.comments.all %}
-                        <article>
+                        <article class="text-center">
                             <p>{{ comment.title }} <br>
                                 {{ comment.description }}<br> by {{ comment.name }} <br><small>{{ comment.date_added }}</small></p>
                         </article>
                     {% endfor %}
+                    <hr>
                     <!--For customers to post comments on the review blogs-->
-                    <h5 class="comment-review-heading">Add a comment</h5>
+                    <h5 class="comment-review-heading text-center">Add a comment</h5>
                     <form method="POST" action=".">
                         {% csrf_token %}
                         {{ form | crispy }}
