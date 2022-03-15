@@ -1,24 +1,13 @@
 html {
-    min-height: 100%;
-    width: 100%;
+    height: 100%;
 }
 
-/*body {
+body {
     background: url('/media/christmas-giftcropped.jpg') no-repeat center center fixed;
     background-size: cover;
-    position: absolute;
+    height: calc(100vh - 164px);
+    color: #555;
     font-family: 'Lato';
-    z-index: -2;
-}*/
-body {
-    background: url('/media/gift-5.jpg') no-repeat center center fixed;
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    font-family: 'Lato', sans-serif;
 }
 
 /* from Bulma */
@@ -29,56 +18,37 @@ body {
     height: 1.5rem;
     width: 1.5rem;
 }
+
 .logo-font {
-    text-transform: none;
-    margin: 5px 30px;
-    font-size: 1.3rem;
-}
-.logo-font-header {
-    text-transform: none;
-    margin: 5px;
-    font-family: 'Damion', cursive;
-    color: #daac69;
-    text-shadow: 4px 4px #000;
-    font-size: 1.3rem;
-}
-.small {
-    font-weight: bold;
-    color: #fff;
-    font-size: 1rem;
-}
-/* rotate text */
-.rotate {
-    font-size: 100px;
-    -webkit-transform: rotate(-10deg);
-    -moz-transform: rotate(-10deg);
-    -ms-transform: rotate(-10deg);
-    -o-transform: rotate(-10deg);
-    transform: rotate(-10deg);
-    -webkit-transform-origin: 50% 50%;
-    -moz-transform-origin: 50% 50%;
-    -ms-transform-origin: 50% 50%;
-    -o-transform-origin: 50% 50%;
-    transform-origin: 50% 50%;
+    text-transform: uppercase;
 }
 
 .main-logo-link {
-    height: 10vh;
-    width: 10vw;
-    margin: 20px;
-    z-index: -999;
+    width: fit-content;
 }
 
 .shop-now-button {
-    background: #000;
+    background: black;
     color: white;
-    border-radius: 10px !important;
-    min-width: 240px;
+    min-width: 260px;
 }
 
 .btn-black {
     background: black;
     color: white;
+}
+
+.btn-outline-black {
+    background: white;
+    color: black !important; /* use important to override link colors for <a> elements */
+    border: 1px solid black;
+}
+
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: black;
+    color: white !important;
 }
 
 .shop-now-button:hover,
@@ -87,140 +57,37 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #000;
-    color: rgb(248, 244, 244);
+    background: #222;
+    color: white;
 }
 
-.btn-black-2 {
-    background: rgb(255, 183, 245);
-}
 .text-black {
-    color: #000;
+    color: #000 !important;
 }
 
 .border-black {
     border: 1px solid black !important;
 }
 
-.logo-gold{
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 50%;
-    left: 100%;
-    font-family: 'Damion',cursive;
-    letter-spacing: .2rem;
-    font-size: 80px;
-    font-weight: bold;
-    background-image: linear-gradient(
-     to right,
-     #ca984d 0,
-     #f6e27a 22%, 
-     #f0df8a 45%,
-     #f6f2c0 50%,
-     #f6e27a 55%,
-     #cb9b51 78%,
-     #d8a14f 100%
-     );
-    color:transparent;
-    -webkit-background-clip:text;
- }
-
-.logo-font-small{
-     font-family:'Lato', serif;
-     font-size: 40px; 
-     letter-spacing: .1rem;
- }
-
-.euro {
-    font-family: 'Damion',cursive;
-    font-size: 40px;
-}
-
-/* snow banner image */
-.snow{
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('/media/snow.jpg');
-    z-index: -3;
-}
-.snow:nth-child(1){
-    animation: animate 10s linear infinite;
-}
-.snow:nth-child(2){
-    animation: animate 15s linear infinite;
-}
-.snow:nth-child(3){
-    animation: animate 20s linear infinite;
-}
-.snow:nth-child(4){
-    animation: animate 14s linear infinite;
-}
-.snow:nth-child(5){
-    animation: animate 16s linear infinite;
-}
-@keyframes animate {
-    0% {
-        background-position-x: 50px;
-        background-position-y: 0;
-    }
-    100% {
-        background-position-x: 50px;
-        background-position-y: 600px;
-    }
-}
-@keyframes animate2 {
-    0% {
-        background-position-x: 100px;
-        background-position-y: 0;
-    }
-    100% {
-        background-position-x: 100px;
-        background-position-y: 600px;
-    }
-}
-@keyframes animate3 {
-    0% {
-        transform: scale(1.5);
-        background-position-x: -100px;
-        background-position-y: 0;
-    }
-    100% {
-        transform: scale(1.5);
-        background-position-x: -100px;
-        background-position-y: 600px;
-    }
-}
-
 .bg-black {
-    background: transparent;
-    padding: 0 10px;
-}
-.bg-gold {
-    color: #000;
-    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-}
-
-.bg-gold:hover{
-    background: linear-gradient(to right, #AFB1AE, #E6E9E5, #B1B1B1, #E6E9E5, #C0C0C0);
+    background: #000 !important;
 }
 
 .overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: white;
-    z-index: -1;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
 a.category-badge > span.badge:hover {
-    background: #047bf1 !important;
-    color: rgb(22, 21, 21) !important;
+    background: #212529 !important;
+    color: #fff !important;
 }
+
 .btt-button {
     height: 42px;
     width: 42px;
@@ -228,9 +95,10 @@ a.category-badge > span.badge:hover {
     bottom: 10px;
     right: 10px;
 }
+
 .btt-link,
 .update-link,
-.remove-link {
+.remove-item {
     cursor: pointer;
 }
 
@@ -254,6 +122,7 @@ input[name='q']::placeholder {
 .toast-capper {
     height: 2px;
 }
+
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
@@ -305,22 +174,33 @@ input[name='q']::placeholder {
     overflow-y: auto;
 }
 
-/* Allauth form formatting */
-.allauth-form-inner-content p{
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d;
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
 }
-.allauth-form-inner-content input{
+
+/* Allauth form formatting */
+
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+}
+
+.allauth-form-inner-content input {
     border-color: #000;
     border-radius: 0;
 }
 
-.allauth-form-inner-content label:not([for='id_remember']){
+.allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
 }
 
 .allauth-form-inner-content input::placeholder {
-    color: #aaaabb;
+    color: #aab7c4;
 }
 
 .allauth-form-inner-content button,
@@ -358,11 +238,8 @@ input[name='q']::placeholder {
 }
 
 /* Product Form */
-.img-fluid{
-    height: 320px;
-    width: 340px;
-}
-.btn-file{
+
+.btn-file {
     position: relative;
     overflow: hidden;
 }
@@ -372,149 +249,48 @@ input[name='q']::placeholder {
     top: 0;
     right: 0;
     min-width: 100%;
+    min-height: 100%;
     opacity: 0;
     cursor: pointer;
 }
 
 .custom-checkbox .custom-control-label::before {
     border-radius: 0;
-    border-color: #000;
+    border-color: #dc3545;
 }
 
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #dc3545;
-    border-color: #f0df8a;
+    border-color: #dc3545;
     border-radius: 0;
 }
 
-.logo-container {
-    background-color: #000;
-}
-.logo-font-large{
-    margin-top: 120px;
-    font-size: 1.9rem;
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
 }
 
-.logo-overlay {
-        background: url('/media/header-logo-cropped.jpg') no-repeat center center fixed;
-        background-size: cover;
-        height: calc(80vh - 130px);
-}
-.comment-review-heading{
-    font-family:'Times New Roman', Times, serif;
-}
-
-.flex-container {
-    display: flex;
-  }
-  
-  .flex-container > div {
-    background-color: rgb(255, 248, 239);
-    margin: 10px;
-    width: 50% !important;
-    padding: 20px;
-    font-size: 30px;
-  }
-
-  .container-sustain{
-      background-color:rgb(255, 248, 239);
-      z-index: -1;
-      padding: 40px 20px;
-  }
-  .history {
-      text-align: center;
-  }
-  .blog-overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: url('/media/blog-overlay.jpg') no-repeat center center fixed;
-    background-size: cover;
-    z-index: -3 !important;
-    overflow-x: hidden;
-}
-
-.team-image {
-    height: 180px;
-    width: 180px;
-    object-fit: cover;
-}
-.team {
-    color: #36454f;
-    font-size: 1rem;
-}
-.team-role {
-    color: #36454f;
-    font-size: 1.3rem;
-}
-.team-heading{
-    font-size: 1.9rem;
-}
-.signature{
-    font-family: 'Damion', cursive;
-    font-size: 2rem;
-}
-.sustain-title{
-    font-size: 1.5rem;
-}
-/*.product-top, .blog-top{
-    margin-top: 180px;
-    width: 100vw;
-}
-.blog-top-small{
-    width: 100vw;
-}
-/*--Footer--*/
-    .footer-container {
-        background-color: #000000;
-        color: #fff;
-        margin-top: auto;
-        width: 100%;
-    }
-    .footer-gold {
-        color: rgba(255, 217, 0, 0.733)!important;
-    }
-    .footer-container div hr {
-        margin: 0 auto;
-        width: 33%;
-        margin-bottom: 10px;
-        color: #000;
-    }
-    .footer-container div p {
-        margin-bottom: 5px;
-    }
-    
-    .footer-menu-link {
-        color: #fff;
-        text-decoration: none;
-    }
-    
-    .footer-li {
-        margin-top: 5px;
-    }
-    
-    .footericon {
-        color: rgba(255, 217, 0, 0.733);
-        font-size: 26px;
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-/* -------------------------------- Media Queries */
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-    .container {
-      max-width: 80%;
-    }
-  }
-  
-/* fixed top navbar only on small screens */
+/* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 220px;
+        padding-top: 116px;
     }
-    
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
     .display-4.logo-font.text-black {
         font-size: 2rem;
     }
@@ -530,81 +306,24 @@ input[name='q']::placeholder {
     .navbar-toggler {
         padding: .6rem .6rem;
         font-size: 1rem;
-        border-color: #000 !important;
-        color: #000 !important;
-        
-    }
-    .rotate{
-        font-size: 50px;
-    }
-    .small{
-        font-size: 15px;
-    }
-    .img-fluid{
-        height: 200px;
-        width: 200px;
-    }
-    img{
-        height: 100vw;
-        width: 80vw;
-    }
-    .blog-container{
-        height:auto;
-        width: fit-content;
-    }
-    .euro{
-        font-size: 25px;
-    }
-}
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
     }
 
-    .header-container {
-        padding-top: 250px;
-    }
-    .logo-font-banner{
-        font-size: x-large!important;
-    }
-}
-@media (min-width: 320px){
-    .logo-font-banner{
-        font-size: small;
-    }
-    .euro{
-        font-size: 35px;
-    }
-}
-@media (max-width: 991px) {
-    .team-image {
-        height: 80px;
-        width: 80px;
-        object-fit: cover;
-        padding-bottom: 5px;
-    }
-    .team-role {
+    #delivery-banner h4 {
         font-size: .9rem;
     }
-    .team {
-        font-size: .7rem;
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
     }
-    body {
-        height: calc(100vh -44px);
+
+    .btn.btn-outline-black.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .75rem;
     }
-}
-    
-@media (min-width: 991px) {
-    .product-top, .blog-top-small{
-        margin-top: 280px;
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
     }
-}
-.checkout{
-    width: 100%;
-    margin-top: 280px;
 }
