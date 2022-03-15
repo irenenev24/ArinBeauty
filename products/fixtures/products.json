@@ -68,6 +68,19 @@
         "image_url": "https://unsplash.com/photos/tnWjbdPmk1M",
         "image": "rosehip-oil.jpg"
       }
+      {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+          "sku": "pp3452646375",
+          "name": "Rosehip Oil Set",
+          "description": "A refreshing serum using the power of rosehip natural oil to soothe dry skin.",
+          "price": 45.00,
+          "category": 1,
+          "rating": 4,
+          "image_url": "https://unsplash.com/photos/tnWjbdPmk1M",
+          "image": "rosehip-oil.jpg"
+        }
   }
   ]
 

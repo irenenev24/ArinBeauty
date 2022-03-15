@@ -91,8 +91,8 @@
       "pk": 12,
       "model": "products.category",
       "fields": {
-        "name": "sale",
-        "friendly_name": "Sale"
+        "name": "clearance",
+        "friendly_name": "clearance"
       }
     }
   ]
