@@ -11,7 +11,7 @@ html {
     z-index: -2;
 }*/
 body {
-    background: url('/media/christmas-giftcropped.jpg') no-repeat center center fixed;
+    background: url('/media/gift.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
