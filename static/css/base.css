@@ -11,7 +11,7 @@ html {
     z-index: -2;
 }*/
 body {
-    background: url('/media/gift.jpg') no-repeat center center fixed;
+    background: url('/media/gift-5.jpg') no-repeat center center fixed;
     background-size: cover;
     margin: 0;
     padding: 0;
@@ -459,7 +459,7 @@ input[name='q']::placeholder {
 .sustain-title{
     font-size: 1.5rem;
 }
-.product-top, .blog-top{
+/*.product-top, .blog-top{
     margin-top: 180px;
     width: 100vw;
 }
@@ -552,9 +552,6 @@ input[name='q']::placeholder {
         height:auto;
         width: fit-content;
     }
-    .logo-font-banner{
-        font-size: 25px;
-    }
     .euro{
         font-size: 25px;
     }
@@ -572,10 +569,13 @@ input[name='q']::placeholder {
     .header-container {
         padding-top: 250px;
     }
-}
-@media (min-width: 655px){
     .logo-font-banner{
-        font-size: 35px;
+        font-size: x-large!important;
+    }
+}
+@media (min-width: 320px){
+    .logo-font-banner{
+        font-size: small;
     }
     .euro{
         font-size: 35px;
