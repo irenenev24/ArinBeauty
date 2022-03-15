@@ -43,7 +43,17 @@ body {
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
+.shop-now-button {
+    background: #000;
+    color: white;
+    border-radius: 10px !important;
+    min-width: 240px;
+}
 
+.btn-black {
+    background: black;
+    color: white;
+}
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
@@ -60,7 +70,48 @@ body {
     background: #222;
     color: white;
 }
+.btn-black-2 {
+    background: rgb(255, 183, 245);
+}
 
+.text-black {
+    color: #000;
+}
+
+.border-black {
+    border: 1px solid black !important;
+}
+.logo-gold {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 100%;
+    font-family: 'Damion', cursive;
+    letter-spacing: .2rem;
+    font-size: 80px;
+    font-weight: bold;
+    background-image: linear-gradient(to right,
+            #ca984d 0,
+            #f6e27a 22%,
+            #f0df8a 45%,
+            #f6f2c0 50%,
+            #f6e27a 55%,
+            #cb9b51 78%,
+            #d8a14f 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.logo-font-small {
+    font-family: 'Lato', serif;
+    font-size: 40px;
+    letter-spacing: .1rem;
+}
+
+.euro {
+    font-family: 'Damion', cursive;
+    font-size: 40px;
+}
 .text-black {
     color: #000 !important;
 }
@@ -68,9 +119,85 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
+/* snow banner image */
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/media/snow.jpg');
+    z-index: -3;
+}
+
+.snow:nth-child(1) {
+    animation: animate 10s linear infinite;
+}
+
+.snow:nth-child(2) {
+    animation: animate 15s linear infinite;
+}
+
+.snow:nth-child(3) {
+    animation: animate 20s linear infinite;
+}
+
+.snow:nth-child(4) {
+    animation: animate 14s linear infinite;
+}
+
+.snow:nth-child(5) {
+    animation: animate 16s linear infinite;
+}
+@keyframes animate {
+    0% {
+        background-position-x: 50px;
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-x: 50px;
+        background-position-y: 600px;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        background-position-x: 100px;
+        background-position-y: 0;
+    }
+
+    100% {
+        background-position-x: 100px;
+        background-position-y: 600px;
+    }
+}
+
+@keyframes animate3 {
+    0% {
+        transform: scale(1.5);
+        background-position-x: -100px;
+        background-position-y: 0;
+    }
+
+    100% {
+        transform: scale(1.5);
+        background-position-x: -100px;
+        background-position-y: 600px;
+    }
+}
 
 .bg-black {
-    background: #000 !important;
+    background: transparent;
+    padding: 0 10px;
+}
+.bg-gold {
+    color: #000;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+}
+
+.bg-gold:hover {
+    background: linear-gradient(to right, #AFB1AE, #E6E9E5, #B1B1B1, #E6E9E5, #C0C0C0);
 }
 
 .overlay {
@@ -264,8 +391,111 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
+/*logo to show over header  currently not functioning
+.logo-container {
+    background-color: transparent;
+}
 
+.logo-font-large {
+    margin-top: 120px;
+    font-size: 2rem;
+}
 
+.logo-overlay {
+    background: url('/media/logo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(80vh - 130px);
+    background-color: antiquewhite;
+    z-index: 99999;
+    width: 20vw;
+    height: 12vh;
+}*/
+.review-container{
+    background-color: rgb(255, 248, 239);
+    padding: 40px 20px;
+}
+/*---Blog CSS---*/
+.history {
+    text-align: center;
+}
+
+.blog-overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: url('/media/blog-overlay.jpg') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -3 !important;
+    overflow-x: hidden;
+}
+.team-image {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+}
+
+.team {
+    color: #36454f;
+    font-size: 1rem;
+}
+
+.team-role {
+    color: #36454f;
+    font-size: 1.3rem;
+}
+
+.team-heading {
+    font-size: 1.9rem;
+}
+
+.signature {
+    font-family: 'Damion', cursive;
+    font-size: 2rem;
+}
+
+.sustain-title {
+    font-size: 1.5rem;
+}
+/*--Footer--*/
+.footer-container {
+    background-color: #000000;
+    color: #fff;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-gold {
+    color: rgba(255, 217, 0, 0.733) !important;
+}
+
+.footer-container div hr {
+    margin: 0 auto;
+    width: 33%;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.footer-container div p {
+    margin-bottom: 5px;
+}
+
+.footer-menu-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-li {
+    margin-top: 5px;
+}
+
+.footericon {
+    color: rgba(255, 217, 0, 0.733);
+    font-size: 26px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
     .fixed-top-desktop-only {

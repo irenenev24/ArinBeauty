@@ -82,7 +82,7 @@
                 </div>
                 <!----- Subtotal Of Product ----->
                 <div class="col-12 col-md-3 mb-4">
-                    <p class="my-0"><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    <p class="my-0"><strong>Subtotal: </strong>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
                 </div>
             </div>
             <hr>
@@ -90,12 +90,12 @@
             <div class="row">
                 <!----- Bag Total Display ----->
                 <div class="col-12 mt-4">
-                    <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                    <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                    <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                    <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
+                    <h4 class="mt-4"><strong>Grand Total: €{{ grand_total|floatformat:2 }}</strong></h4>
                     {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">
-                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                            You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!
                         </p>
                     {% endif %}
                 </div>
