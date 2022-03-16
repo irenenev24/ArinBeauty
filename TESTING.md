@@ -17,7 +17,7 @@ All tests passed
 ![CSS Validation](media/css-val.png)
 ## JavaScript
 All tests passed
-
+![JS Validation](media/js-hint.png)
 ## Python
 All tests passed
 ![PYTHON Validation](media/python-val-1.png)
@@ -124,3 +124,6 @@ I have implemented product reviews on my site, however I was unable to figure ou
 I wanted to add a footer but was met with an issue when doing so. The footer tended to stay around half way down the page and wouldnt stick to the bottom despite numerous attempts. I asked on slack, stack overflow, and my mentor but ultimately due to time constraints the issue is still present. 
 
 - Going forward I would like to break the image file into sub files for product images, blog images and readme images as it is quite a large file. 
+- An error has occured with my confirmation emails. I have redone the steps in Boutique Ado and checked all mail settngs and settings.py. As I type this I am an hour from submission and Im on a 90 minute wait with tutor support so I am unsure if it will be resolved on time. I was previously recieving emails. 
+![EMAIL Validation](media/email-confirm.png)
+- I also have noticed an issue with the header covering the page. The header is coming down further than expected and is covering the top of the writing. This is an issue I will fix going forward. 
