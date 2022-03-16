@@ -6,19 +6,22 @@
   * [Testing accessibility](#testing-accessibility)
   * [known bugs](#known-bugs)
 ### [Code Validation](#code-validation)
-
+##All warnings on HTML are created by the python code in the file
 ## HTML5
 All tests passed
-
+![HTML Validation](media/html-val-1.png)
+![HTML Validation](media/html-val-2.png)
+![HTML Validation](media/html-val-3.png)
 ## CSS3
 All tests passed
-
+![CSS Validation](media/css-val.png)
 ## JavaScript
 All tests passed
 
 ## Python
 All tests passed
-
+![PYTHON Validation](media/python-val-1.png)
+![PYTHON Validation](media/python-val-2.png)
 *Please Note - Warnings and errors were given on most pages due to template logic being used in this project. Certain Python files also failed PEP8 checks due to base code set by Django.*
 # [Testing performance](#testing-performance)
 # Responsiveness
