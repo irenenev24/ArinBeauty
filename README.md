@@ -566,7 +566,7 @@ Once the project has been loaded into an IDE of choice, run the following comman
 ### **How to Fork the respository**
 
 1. Log into GitHub.
-2. In Github go to (https://github.com//gomathishakar28/ms3_bubbles).
+2. In Github go to (https://github.com//irenenev24/arin-beauty-ms4).
 3. In the top right hand corner click "Fork".
 
 ### **Credits**
