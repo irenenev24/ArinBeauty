@@ -6,7 +6,7 @@ body {
     background: url('/media/gift-3.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 184px);
-    color: rgb(243, 9, 9);
+    color: rgb(82, 80, 80);
     font-family: 'Lato';
 }
 
@@ -28,7 +28,7 @@ body {
 }
 /*---shop now button--*/
 .shop-now-button {
-    background: black;
+    background: rgb(243, 6, 6);
     color: white;
     min-width: 260px;
 }
