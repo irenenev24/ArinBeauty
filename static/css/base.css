@@ -498,7 +498,7 @@ input[name='q']::placeholder {
 
 .footer-gold {
     color: rgba(255, 217, 0, 0.733) !important;
-    font-size: 2rem !important;
+    font-size: 1rem !important;
 }
 
 .footer-container div hr {
@@ -508,11 +508,9 @@ input[name='q']::placeholder {
     color: #000;
 }
 
-.footer-text {
-    font-size: 1rem !important;
-}
 .footer-container div p {
     margin-bottom: 5px;
+    font-size: .8rem !important;
 }
 
 .footer-menu-link {
