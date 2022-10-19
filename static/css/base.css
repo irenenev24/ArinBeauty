@@ -421,7 +421,7 @@ input[name='q']::placeholder {
     border-color: #dc3545;
     border-radius: 0;
 }
-/*logo to show over header  currently not functioning
+/*.allauth-form-inner-content logo to show over header  currently not*/functioning
 .logo-container {
     background-color: transparent;
 }
@@ -435,11 +435,11 @@ input[name='q']::placeholder {
     background: url('/media/logo.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(80vh - 130px);
-    background-color: antiquewhite;
+    background-color: white;
     z-index: 99999;
     width: 20vw;
     height: 12vh;
-}*/
+}
 .review-container{
     background-color: rgb(255, 248, 239);
     padding: 40px 20px;
