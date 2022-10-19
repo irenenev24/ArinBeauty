@@ -511,7 +511,7 @@ input[name='q']::placeholder {
     margin-bottom: 5px;
 }
 
-footer div p {
+footer {
     font-size: 2rem;
 }
 .footer-menu-link {
